@@ -114,39 +114,68 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.55, // Set width factor to 55%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white, // Set background color to white
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Oh ja, ich mich auch 🥰',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+  alignment: Alignment.centerLeft,
+  child: Stack(
+    children: [
+      Container(
+        margin: const EdgeInsets.only(left: 10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: FractionallySizedBox(
+            widthFactor: 0.55,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(12),
+              child: const Text(
+                'Oh ja, ich mich auch 🥰',
+                style: TextStyle(
+                  color: Color(0xFF232323),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: 0,
+        left: 10, 
+        child: Container(
+          width: 15, 
+          height: 15, 
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+            border: Border.all(
+              color: const Color(0xFF00CC08), // Border color 00CC08
+              width: 2, // Border width
+            ),
+          ),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFF00E809), // Change the color to 00E809
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.75, // Set width factor to 85%
+                        widthFactor: 0.75, // Set width factor to 75%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Color(0xFFE2FFD4),
@@ -170,39 +199,67 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.35, // Set width factor to 20%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white, // Set background color to white
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Ja, mach das',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+  alignment: Alignment.centerLeft,
+  child: Stack(
+    children: [
+      Container(
+        margin: const EdgeInsets.only(left: 10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: FractionallySizedBox(
+            widthFactor: 0.35,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(12),
+              child: const Text(
+                'Ja, mach das',
+                style: TextStyle(
+                  color: Color(0xFF232323),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: 0,
+        left: 10, 
+        child: Container(
+          width: 15, 
+          height: 15, 
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+            border: Border.all(
+              color: const Color(0xFF00CC08), // Border color 00CC08
+              width: 2, // Border width
+            ),
+          ),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFF00E809), // Change the color to 00E809
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.8, // Set width factor to 85%
+                        widthFactor: 0.8, // Set width factor to 80%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Color(0xFFE2FFD4),
@@ -225,40 +282,68 @@ class ChatPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.5, // Set width factor to 20%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white, // Set background color to white
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Ok, wenn du meinst...',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                 Align(
+  alignment: Alignment.centerLeft,
+  child: Stack(
+    children: [
+      Container(
+        margin: const EdgeInsets.only(left: 10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: FractionallySizedBox(
+            widthFactor: 0.5,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(12),
+              child: const Text(
+                'Ok, wenn du meinst...',
+                style: TextStyle(
+                  color: Color(0xFF232323),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: 0,
+        left: 10, 
+        child: Container(
+          width: 15, 
+          height: 15, 
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+            border: Border.all(
+              color: const Color(0xFF00CC08), // Border color 00CC08
+              width: 2, // Border width
+            ),
+          ),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFF00E809), // Change the color to 00E809
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.45, // Set width factor to 85%
+                        widthFactor: 0.45, // Set width factor to 45%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Color(0xFFE2FFD4),
@@ -282,33 +367,61 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.75, // Set width factor to 20%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white, // Set background color to white
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Ja, kein Problem. Viel Spaß euch...',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+  alignment: Alignment.centerLeft,
+  child: Stack(
+    children: [
+      Container(
+        margin: const EdgeInsets.only(left: 10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: FractionallySizedBox(
+            widthFactor: 0.8,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(12),
+              child: const Text(
+                'Ja, kein Problem. Viel Spaß euch...',
+                style: TextStyle(
+                  color: Color(0xFF232323),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      Positioned(
+        bottom: 0,
+        left: 10, 
+        child: Container(
+          width: 15, 
+          height: 15, 
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+            border: Border.all(
+              color: const Color(0xFF00CC08), // Border color 00CC08
+              width: 2, // Border width
+            ),
+          ),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFF00E809), // Change the color to 00E809
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
                 ],
               ),
             ),
