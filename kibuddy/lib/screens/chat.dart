@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'kibuddy.dart';
+
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key, Key? key2});
@@ -39,7 +41,7 @@ class ChatPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       color: Color(0xFF232323),
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
@@ -75,8 +77,11 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Add functionality for the robot icon
-                  },
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => KIBuddyPage()), // Assuming KiBuddy is the name of your screen
+    );
+  },
                 ),
               ],
             ),
