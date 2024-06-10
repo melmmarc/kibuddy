@@ -65,30 +65,84 @@ class ChatPage extends StatelessWidget {
                   },
                 ),
                 Container(
-  margin: const EdgeInsets.only(right: 10.0),
-  child: IconButton(
-    icon: Transform.translate(
-      offset: const Offset(0.0, -1.0),
-      child: Image.asset(
-        'assets/images/robot.png',
-        width: 28,
-        height: 28,
-      ),
-    ),
-    onPressed: () {
-      // Navigate to the KIBuddyPage when the robot icon is clicked
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KIBuddyPage is the name of your screen
-      );
-    },
-  ),
-),
+                  margin: const EdgeInsets.only(right: 10.0),
+                  child: IconButton(
+                    icon: Transform.translate(
+                      offset: const Offset(0.0, -1.0),
+                      child: Image.asset(
+                        'assets/images/robot.png',
+                        width: 28,
+                        height: 28,
+                      ),
+                    ),
+                    onPressed: () {
+                      // Navigate to the KIBuddyPage when the robot icon is clicked
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KIBuddyPage is the name of your screen
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
             Expanded(
-              child: Container(
-                // Your chat content goes here
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.85, // Set width factor to 60%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFE2FFD4),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Hallo Schatz, ich freue mich dich heute Abend endlich wieder zu sehen 😁',
+                            style: TextStyle(color: Color(0xFF232323), fontWeight: FontWeight.w500, fontSize: 15), // Set text color to #232323
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.55, // Set width factor to 60%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white, // Set background color to white
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Oh ja, ich mich auch 🥰',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
