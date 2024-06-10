@@ -16,7 +16,7 @@ class ChatPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column( // Use Column for vertical layout
+        child: Column(
           children: [
             AppBar(
               leading: IconButton(
@@ -80,7 +80,6 @@ class ChatPage extends StatelessWidget {
                 ),
               ],
             ),
-            // Expanded to fill remaining space
             Expanded(
               child: Container(
                 // Your chat content goes here
@@ -89,14 +88,14 @@ class ChatPage extends StatelessWidget {
           ],
         ),
       ),
-      // Chat input bar
       bottomNavigationBar: BottomAppBar(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 0.0),
           child: Row(
             children: [
               IconButton(
-                icon: const Icon(CupertinoIcons.plus_circle),
+                icon: const Icon(CupertinoIcons.plus),
+                color: const Color(0xFF3297B7),
                 onPressed: () {
                   // Add functionality for the plus icon
                 },
@@ -104,23 +103,36 @@ class ChatPage extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      hintText: 'Type a message',
-                      border: InputBorder.none,
+                  child: Theme(
+                    data: ThemeData(
+                      primaryColor: Colors.grey,
                     ),
-                    // Add functionality to handle text input
+                    child: SizedBox(
+                      height: 35, // Set the height of the text input field
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: '',
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                        ),
+                        // Add functionality to handle text input
+                      ),
+                    ),
                   ),
                 ),
               ),
               IconButton(
                 icon: const Icon(CupertinoIcons.camera),
+                color: const Color(0xFF3297B7),
                 onPressed: () {
                   // Add functionality for the camera icon
                 },
               ),
               IconButton(
                 icon: const Icon(CupertinoIcons.mic),
+                color: const Color(0xFF3297B7),
                 onPressed: () {
                   // Add functionality for the microphone icon
                 },
