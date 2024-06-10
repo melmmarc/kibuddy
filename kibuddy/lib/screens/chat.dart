@@ -38,7 +38,7 @@ class ChatPage extends StatelessWidget {
                     'Megan',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Color(0xFF232323),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -47,11 +47,11 @@ class ChatPage extends StatelessWidget {
               titleSpacing: -5.0,
               actions: [
                 IconButton(
-                  icon: const Icon(CupertinoIcons.videocam),
+                  icon: const Icon(CupertinoIcons.video_camera),
                   color: const Color(0xFF3297B7),
                   iconSize: 36,
                   onPressed: () {
-                    // Add functionality for camera icon
+                    // Add functionality for video icon
                   },
                 ),
                 IconButton(
@@ -99,16 +99,20 @@ class ChatPage extends StatelessWidget {
                 onPressed: () {
                   // Add functionality for the plus icon
                 },
+                padding: const EdgeInsets.only(left: 0, right: 0), // Add padding to move the icon to the left
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Theme(
                     data: ThemeData(
+                      // Customizing the highlight color to transparent
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
                       primaryColor: Colors.grey,
                     ),
                     child: SizedBox(
-                      height: 35, // Set the height of the text input field
+                      height: 30, // Set the height of the text input field
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: '',
