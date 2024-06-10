@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'kibuddy.dart';
 
-
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key, Key? key2});
 
@@ -95,7 +94,7 @@ class ChatPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.85, // Set width factor to 60%
+                        widthFactor: 0.85, // Set width factor to 85%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Color(0xFFE2FFD4),
@@ -114,12 +113,12 @@ class ChatPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.55, // Set width factor to 60%
+                        widthFactor: 0.55, // Set width factor to 55%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Colors.white, // Set background color to white
@@ -132,6 +131,174 @@ class ChatPage extends StatelessWidget {
                           padding: const EdgeInsets.all(12),
                           child: const Text(
                             'Oh ja, ich mich auch 🥰',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.75, // Set width factor to 85%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFE2FFD4),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Ich schreib dir nochmal wenn ich Feierabend habe und losfahre',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.4, // Set width factor to 20%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white, // Set background color to white
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Ja, mach das',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.8, // Set width factor to 85%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFE2FFD4),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Hey Schatz, ich gehe heute Abend doch lieber mit meinen Freunden in eine Bar, aber morgen sehen wir uns wider, versprochen 😘',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.5, // Set width factor to 20%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white, // Set background color to white
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Ok, wenn du meinst...',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.45, // Set width factor to 85%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFE2FFD4),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Ist das ok für dich?',
+                            style: TextStyle(
+                              color: Color(0xFF232323),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.5, // Set width factor to 20%
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white, // Set background color to white
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Text(
+                            'Ja, kein Problem. Viel Spaß euch...',
                             style: TextStyle(
                               color: Color(0xFF232323),
                               fontWeight: FontWeight.w500,
