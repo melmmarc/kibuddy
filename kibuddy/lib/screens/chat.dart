@@ -64,25 +64,26 @@ class ChatPage extends StatelessWidget {
                     // Add functionality for telephone icon
                   },
                 ),
-                IconButton(
-                  icon: Padding(
-                    padding: const EdgeInsets.only(right: 10.0),
-                    child: Transform.translate(
-                      offset: const Offset(0.0, -1.0),
-                      child: Image.asset(
-                        'assets/images/robot.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                    ),
-                  ),
-                  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KiBuddy is the name of your screen
-    );
-  },
-                ),
+                Container(
+  margin: const EdgeInsets.only(right: 10.0),
+  child: IconButton(
+    icon: Transform.translate(
+      offset: const Offset(0.0, -1.0),
+      child: Image.asset(
+        'assets/images/robot.png',
+        width: 28,
+        height: 28,
+      ),
+    ),
+    onPressed: () {
+      // Navigate to the KIBuddyPage when the robot icon is clicked
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KIBuddyPage is the name of your screen
+      );
+    },
+  ),
+),
               ],
             ),
             Expanded(
