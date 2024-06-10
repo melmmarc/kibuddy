@@ -232,20 +232,20 @@ class ChatPage extends StatelessWidget {
       ),
       Positioned(
         bottom: 0,
-        left: 10, 
+        left: 10,
         child: Container(
-          width: 15, 
-          height: 15, 
+          width: 15,
+          height: 15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
             border: Border.all(
-              color: const Color(0xFF00CC08), // Border color 00CC08
+              color: const Color(0xFFF8DF07), // Border color F8DF07
               width: 2, // Border width
             ),
           ),
           child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF00E809), // Change the color to 00E809
+            decoration: BoxDecoration(
+              color: const Color(0xFFFBEE7A), // Circle color FBEE7A
               shape: BoxShape.circle,
             ),
           ),
@@ -254,6 +254,7 @@ class ChatPage extends StatelessWidget {
     ],
   ),
 ),
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -316,20 +317,20 @@ class ChatPage extends StatelessWidget {
       ),
       Positioned(
         bottom: 0,
-        left: 10, 
+        left: 10,
         child: Container(
-          width: 15, 
-          height: 15, 
+          width: 15,
+          height: 15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
             border: Border.all(
-              color: const Color(0xFF00CC08), // Border color 00CC08
+              color: const Color(0xFFC80404), // Border color C80404
               width: 2, // Border width
             ),
           ),
           child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF00E809), // Change the color to 00E809
+            decoration: BoxDecoration(
+              color: const Color(0xFFFB2F2F), // Circle color FB2F2F
               shape: BoxShape.circle,
             ),
           ),
@@ -338,6 +339,7 @@ class ChatPage extends StatelessWidget {
     ],
   ),
 ),
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -400,20 +402,20 @@ class ChatPage extends StatelessWidget {
       ),
       Positioned(
         bottom: 0,
-        left: 10, 
+        left: 10,
         child: Container(
-          width: 15, 
-          height: 15, 
+          width: 15,
+          height: 15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
             border: Border.all(
-              color: const Color(0xFF00CC08), // Border color 00CC08
+              color: const Color(0xFF991DFB), // Border color 991DFB
               width: 2, // Border width
             ),
           ),
           child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF00E809), // Change the color to 00E809
+            decoration: BoxDecoration(
+              color: const Color(0xFFAD4AFC), // Circle color AD4AFC
               shape: BoxShape.circle,
             ),
           ),
@@ -422,6 +424,7 @@ class ChatPage extends StatelessWidget {
     ],
   ),
 ),
+
                 ],
               ),
             ),
