@@ -42,7 +42,7 @@ class KIBuddyPage extends StatelessWidget {
   ),
   actions: [
     IconButton(
-      icon: Icon(Icons.settings),
+      icon: const Icon(Icons.settings),
       iconSize: 28,
       color: const Color(0xFF3297B7),
       onPressed: () {
