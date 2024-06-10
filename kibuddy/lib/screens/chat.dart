@@ -92,7 +92,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.85, // Set width factor to 85%
                         child: Container(
@@ -116,7 +116,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.55, // Set width factor to 55%
                         child: Container(
@@ -144,7 +144,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.75, // Set width factor to 85%
                         child: Container(
@@ -172,9 +172,9 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.4, // Set width factor to 20%
+                        widthFactor: 0.35, // Set width factor to 20%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Colors.white, // Set background color to white
@@ -200,7 +200,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.8, // Set width factor to 85%
                         child: Container(
@@ -228,7 +228,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.5, // Set width factor to 20%
                         child: Container(
@@ -256,7 +256,7 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
                         widthFactor: 0.45, // Set width factor to 85%
                         child: Container(
@@ -284,9 +284,9 @@ class ChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: FractionallySizedBox(
-                        widthFactor: 0.5, // Set width factor to 20%
+                        widthFactor: 0.75, // Set width factor to 20%
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Colors.white, // Set background color to white
