@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat.dart';
+import 'settings.dart';
 
 class KIBuddyPage extends StatelessWidget {
   const KIBuddyPage({super.key, Key? key2});
@@ -24,11 +25,14 @@ class KIBuddyPage extends StatelessWidget {
     icon: const Icon(Icons.arrow_back_ios_new),
     color: const Color(0xFF3297B7),
     onPressed: () {
-      Navigator.pop(context);
-    },
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ChatPage()), // Assuming KiBuddy is the name of your screen
+    );
+  },
   ),
   automaticallyImplyLeading: false, // This removes the automatically generated back button
-  title: Text(
+  title: const Text(
     'KI-Buddy',
     style: TextStyle(
       fontSize: 22,
@@ -36,7 +40,21 @@ class KIBuddyPage extends StatelessWidget {
       fontWeight: FontWeight.w600,
     ),
   ),
+  actions: [
+    IconButton(
+      icon: Icon(Icons.settings),
+      iconSize: 28,
+      color: const Color(0xFF3297B7),
+      onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SettingsPage()), // Assuming KiBuddy is the name of your screen
+    );
+  },
+    ),
+  ],
 ),
+
             Expanded(
               child: Container(
                 // Your chat content goes here

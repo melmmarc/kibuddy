@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'kibuddy.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key, Key? key2});
@@ -23,8 +24,11 @@ class SettingsPage extends StatelessWidget {
                 icon: const Icon(Icons.arrow_back_ios_new),
                 color: const Color(0xFF3297B7),
                 onPressed: () {
-                  //Navigator.of(context).pop();
-                },
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KiBuddy is the name of your screen
+    );
+  },
               ),
               title: Row(
                 children: [

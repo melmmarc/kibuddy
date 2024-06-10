@@ -79,7 +79,7 @@ class ChatPage extends StatelessWidget {
                   onPressed: () {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => KIBuddyPage()), // Assuming KiBuddy is the name of your screen
+      MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KiBuddy is the name of your screen
     );
   },
                 ),
