@@ -23,7 +23,7 @@ class ChatPage extends StatelessWidget {
                 icon: const Icon(Icons.arrow_back_ios_new),
                 color: const Color(0xFF3297B7),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  //Navigator.of(context).pop();
                 },
               ),
               title: Row(
@@ -80,7 +80,53 @@ class ChatPage extends StatelessWidget {
                 ),
               ],
             ),
+            // Expanded to fill remaining space
+            Expanded(
+              child: Container(
+                // Your chat content goes here
+              ),
+            ),
           ],
+        ),
+      ),
+      // Chat input bar
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            children: [
+              IconButton(
+                icon: const Icon(CupertinoIcons.plus_circle),
+                onPressed: () {
+                  // Add functionality for the plus icon
+                },
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      hintText: 'Type a message',
+                      border: InputBorder.none,
+                    ),
+                    // Add functionality to handle text input
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(CupertinoIcons.camera),
+                onPressed: () {
+                  // Add functionality for the camera icon
+                },
+              ),
+              IconButton(
+                icon: const Icon(CupertinoIcons.mic),
+                onPressed: () {
+                  // Add functionality for the microphone icon
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
