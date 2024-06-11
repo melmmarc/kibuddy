@@ -72,6 +72,9 @@ flutter:
     - assets/images/taylorswift.png
     - assets/images/markwahlberg.jpg
     - assets/images/helenefischer.jpeg
+    - assets/images/morganfreeman.avif
+    - assets/images/katyperry.jpeg
+    - assets/images/heidiklum.jpeg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

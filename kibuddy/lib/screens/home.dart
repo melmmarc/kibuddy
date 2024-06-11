@@ -271,13 +271,34 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(), // Placeholder for the main content
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the fourth box
+                    },
+                    child: const Material(
+                      color: Colors.white,
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/morganfreeman.avif'),
+                        ),
+                        title: Text(
+                          'Morgan',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text('Sonntag steht noch?'), // Add appropriate subtitle here
+                      ),
+                    ),
                   ),
                 ],
               ),
             ],
+            
           ),
+          
+          
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedItemColor: const Color(0xFF3297B7),
