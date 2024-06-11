@@ -16,6 +16,7 @@ class _ChatPageState extends State<ChatPage> {
   bool _isSecondGreyBubbleVisible = false;
   bool _isThirdGreyBubbleVisible = false;
   bool _isFourthGreyBubbleVisible = false;
+  
 
   @override
   Widget build(BuildContext context) {
