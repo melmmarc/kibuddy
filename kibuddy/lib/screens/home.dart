@@ -227,6 +227,50 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the third box
+                    },
+                    child: Container(
+                      height: 70,
+                      color: Colors.white,
+                      child: const Material(
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/markwahlberg.jpg'),
+                          ),
+                          title: Text(
+                            'Mark',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text('Bis morgen.'), // Add appropriate subtitle here
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the fourth box
+                    },
+                    child: const Material(
+                      color: Colors.white,
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/helenefischer.jpeg'),
+                        ),
+                        title: Text(
+                          'Helene',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text('Bist du morgen dabei?'), // Add appropriate subtitle here
+                      ),
+                    ),
+                  ),
                   Expanded(
                     child: Container(), // Placeholder for the main content
                   ),
@@ -272,6 +316,7 @@ class HomePage extends StatelessWidget {
         ),
       );
     },
+    
   );
 }
 }
