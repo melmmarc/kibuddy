@@ -146,9 +146,9 @@ class HomePage extends StatelessWidget {
                         ), // Navigate to chat.dart
                       );
                     },
-                    child: Container(
-                      color: Colors.white, // Add white background
-                      child: const ListTile(
+                    child: const Material(
+                      color: Colors.white,
+                      child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage('assets/images/megan-fox.webp'),
                         ),
@@ -163,9 +163,25 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
-                  Container(
-                    height: 80,
-                    color: Colors.white, // Second box
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the second box
+                    },
+                    child: const Material(
+                      color: Colors.white,
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/jenniferlawrence.jpeg'),
+                        ),
+                        title: Text(
+                          'Jennifer', // Replace with appropriate text
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text('Ok'), // Replace with appropriate text
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
                   Container(
@@ -187,8 +203,8 @@ class HomePage extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Image.asset(
                   'assets/images/status-icon.png',
-                  width: 24,
-                  height: 24,
+                  width: 26,
+                  height: 26,
                 ),
                 label: 'Aktuelles',
               ),
