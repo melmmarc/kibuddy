@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -8,7 +6,7 @@ import 'dart:typed_data';
 import 'chat.dart'; // Import chat.dart file
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key, Key? key4});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +33,8 @@ class HomePage extends StatelessWidget {
   final bool redToggledOn;
   final bool purpleToggledOn;
 
-  const HomePage({
-    Key? key,
+  const HomePage({super.key, 
+    Key? key5,
     required this.greenToggledOn,
     required this.yellowToggledOn,
     required this.redToggledOn,
@@ -184,24 +182,51 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
-                  Container(
-                    height: 80,
-                    color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the third box
+                    },
+                    child: Container(
+                      height: 70,
+                      color: Colors.white,
+                      child: const Material(
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/benaffleck.jpeg'),
+                          ),
+                          title: Text(
+                            'Ben',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text('Ja, sehe ich genau so.'), // Add appropriate subtitle here
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                    onTap: () {
+                      // Add onTap functionality for the fourth box
+                    },
                     child: const Material(
+                      color: Colors.white,
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/benaffleck.jpeg'),
+                          backgroundImage: AssetImage('assets/images/taylorswift.png'),
                         ),
                         title: Text(
-                          'Ben',
+                          'Taylor',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        subtitle: Text('Ja, sehe ich genau so.'), // Add appropriate subtitle here
+                        subtitle: Text('Denk an den Termin morgen.'), // Add appropriate subtitle here
                       ),
                     ),
                   ),
+                  const SizedBox(height: 2), // Add some space between boxes
                   Expanded(
                     child: Container(), // Placeholder for the main content
                   ),
@@ -220,32 +245,34 @@ class HomePage extends StatelessWidget {
                   width: 26,
                   height: 26,
                 ),
-                label: 'Aktuelles',
+                label:
+                              'Aktuelles',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.phone),
+              label: 'Anrufe',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.people_alt_outlined),
+              label: 'Communitys',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/images/chatbubble.png',
+                width: 24,
+                height: 24,
               ),
-              const BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.phone),
-                label: 'Anrufe',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.people_alt_outlined),
-                label: 'Communitys',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/images/chatbubble.png',
-                  width: 24,
-                  height: 24,
-                ),
-                label: 'Chats',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Einstellungen',
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
+              label: 'Chats',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Einstellungen',
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
+}
+
