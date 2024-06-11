@@ -26,7 +26,7 @@ class _ChatPageState extends State<ChatPage> {
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/whatsapp-bg.jpeg'),
+            image: AssetImage('assets/images/whatsapp-bg.png'),
             fit: BoxFit.cover,
           ),
         ),

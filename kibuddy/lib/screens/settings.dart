@@ -11,7 +11,10 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool isSwitched = true; // State variable to track the switch state
+  bool greenSwitched = true; 
+  bool yellowSwitched = true; 
+  bool redSwitched = true; 
+  bool purpleSwitched = true; 
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class _SettingsPageState extends State<SettingsPage> {
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/whatsapp-bg.jpeg'),
+            image: AssetImage('assets/images/whatsapp-bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -160,10 +163,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                           child: Transform.scale(
                                             scale: 0.8,
                                             child: CupertinoSwitch(
-                                              value: isSwitched,
+                                              value: greenSwitched,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  isSwitched = value; // Update the state variable
+                                                  greenSwitched = value; // Update the state variable
                                                 });
                                               },
                                               activeColor: const Color(0xFF6edc5f),
@@ -197,10 +200,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                               child: Transform.scale(
                                                 scale: 0.8,
                                                 child: CupertinoSwitch(
-                                                  value: isSwitched,
+                                                  value: yellowSwitched,
                                                   onChanged: (value) {
                                                     setState(() {
-                                                      isSwitched = value; // Update the state variable
+                                                      yellowSwitched = value; // Update the state variable
                                                     });
                                                   },
                                                   activeColor: const Color(0xFF6edc5f),
@@ -234,10 +237,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                                   child: Transform.scale(
                                                     scale: 0.8,
                                                     child: CupertinoSwitch(
-                                                      value: isSwitched,
+                                                      value: redSwitched,
                                                       onChanged: (value) {
                                                         setState(() {
-                                                          isSwitched = value; // Update the state variable
+                                                          redSwitched = value; // Update the state variable
                                                         });
                                                       },
                                                       activeColor: const Color(0xFF6edc5f),
@@ -272,10 +275,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                                       child: Transform.scale(
                                                         scale: 0.8,
                                                         child: CupertinoSwitch(
-                                                          value: isSwitched,
+                                                          value: purpleSwitched,
                                                           onChanged: (value) {
                                                             setState(() {
-                                                              isSwitched = value; // Update the state variable
+                                                              purpleSwitched = value; // Update the state variable
                                                             });
                                                           },
                                                           activeColor: const Color(0xFF6edc5f),

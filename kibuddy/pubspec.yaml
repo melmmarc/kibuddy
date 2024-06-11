@@ -58,6 +58,8 @@ flutter:
     - assets/images/megan-fox.webp
     - assets/images/robot.png
     - assets/images/whatsapp-bg.jpeg
+    - assets/images/whatsapp-bg.png
+    - assets/images/whatsapp-bg-mid.jpeg
     - assets/images/red.png
     - assets/images/kibuddy-face.png
     - assets/images/kibuddy-body.png
