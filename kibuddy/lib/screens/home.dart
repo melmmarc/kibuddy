@@ -132,23 +132,45 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ChatPage(greenToggledOn: greenToggledOn, yellowToggledOn: yellowToggledOn, redToggledOn: redToggledOn, purpleToggledOn: purpleToggledOn, firstMessageClicked: false, secondMessageClicked: false, thirdMessageClicked: false, fourthMessageClicked: false,)), // Navigate to chat.dart
+                        MaterialPageRoute(
+                          builder: (context) => ChatPage(
+                            greenToggledOn: greenToggledOn,
+                            yellowToggledOn: yellowToggledOn,
+                            redToggledOn: redToggledOn,
+                            purpleToggledOn: purpleToggledOn,
+                            firstMessageClicked: false,
+                            secondMessageClicked: false,
+                            thirdMessageClicked: false,
+                            fourthMessageClicked: false,
+                          ),
+                        ), // Navigate to chat.dart
                       );
                     },
                     child: Container(
-                      height: 80,
-                      color: Colors.red, // First box
+                      color: Colors.white, // Add white background
+                      child: const ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/megan-fox.webp'),
+                        ),
+                        title: Text(
+                          'Megan', // Replace with appropriate text
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text('Ja, kein Problem. Viel Spaß euch...'), // Replace with appropriate text
+                      ),
                     ),
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
                   Container(
                     height: 80,
-                    color: Colors.green, // Second box
+                    color: Colors.white, // Second box
                   ),
                   const SizedBox(height: 2), // Add some space between boxes
                   Container(
                     height: 80,
-                    color: Colors.blue, // Third box
+                    color: Colors.white, // Third box
                   ),
                   Expanded(
                     child: Container(), // Placeholder for the main content
