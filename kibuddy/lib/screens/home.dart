@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
   final bool purpleToggledOn;
 
   const HomePage({
-    super.key,
+    Key? key,
     required this.greenToggledOn,
     required this.yellowToggledOn,
     required this.redToggledOn,
@@ -186,7 +186,21 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 2), // Add some space between boxes
                   Container(
                     height: 80,
-                    color: Colors.white, // Third box
+                    color: Colors.white,
+                    child: const Material(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/benaffleck.jpeg'),
+                        ),
+                        title: Text(
+                          'Ben',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text('Ja, sehe ich genau so.'), // Add appropriate subtitle here
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Container(), // Placeholder for the main content

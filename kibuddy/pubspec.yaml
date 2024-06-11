@@ -68,6 +68,7 @@ flutter:
     - assets/images/status-icon.png
     - assets/images/chatbubble.png
     - assets/images/jenniferlawrence.jpeg
+    - assets/images/benaffleck.jpeg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
