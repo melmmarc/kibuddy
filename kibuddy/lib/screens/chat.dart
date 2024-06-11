@@ -96,150 +96,153 @@ class _ChatPageState extends State<ChatPage> {
             ),
             Expanded(
               child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.85, // Set width factor to 85%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE2FFD4),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: FractionallySizedBox(
+                          widthFactor: 0.85, // Set width factor to 85%
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFE2FFD4),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
+                              ),
                             ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Hallo Schatz, ich freue mich dich heute Abend endlich wieder zu sehen 😁',
-                            style: TextStyle(color: Color(0xFF232323), fontWeight: FontWeight.w500, fontSize: 15), // Set text color to #232323
+                            padding: const EdgeInsets.all(12),
+                            child: const Text(
+                              'Hallo Schatz, ich freue mich dich heute Abend endlich wieder zu sehen 😁',
+                              style: TextStyle(
+                                  color: Color(0xFF232323),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15), // Set text color to #232323
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Align(
-  alignment: Alignment.centerLeft,
-  child: Stack(
-    children: [
-      Container(
-        margin: const EdgeInsets.only(left: 10.0),
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: FractionallySizedBox(
-            widthFactor: 0.55,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              padding: const EdgeInsets.all(12),
-              child: const Text(
-                'Oh ja, ich mich auch 🥰',
-                style: TextStyle(
-                  color: Color(0xFF232323),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Positioned(
-        bottom: 0,
-        left: 10, 
-        child: GestureDetector(
-          onTap: () {
-            setState(() {
-              _isGreyBubbleVisible = !_isGreyBubbleVisible;
-            });
-          },
-        child: Container(
-          width: 15, 
-          height: 15, 
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-            border: Border.all(
-              color: const Color(0xFF00CC08), // Border color 00CC08
-              width: 2, // Border width
-            ),
-          ),
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF00E809), // Change the color to 00E809
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-      ),
-    )
-    ],
-  ),
-),
-
-if (_isGreyBubbleVisible)
-Align(
-                    alignment: Alignment.centerRight,
-                    child: Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 10.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: FractionallySizedBox(
-                              widthFactor: 0.5,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    topLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: FractionallySizedBox(
+                                widthFactor: 0.55,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
                                   ),
-                                ),
-                                padding: const EdgeInsets.all(12),
-                                child: const Text(
-                                  'Sie freut sich auch.',
-                                  style: TextStyle(
-                                    color: Color(0xFF232323),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15,
+                                  padding: const EdgeInsets.all(12),
+                                  child: const Text(
+                                    'Oh ja, ich mich auch 🥰',
+                                    style: TextStyle(
+                                      color: Color(0xFF232323),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Image.asset(
-                            'assets/images/kibuddy-face.png',
-                            width: 40,
-                            height: 40,
+                          Positioned(
+                            bottom: 0,
+                            left: 10,
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _isGreyBubbleVisible = !_isGreyBubbleVisible;
+                                });
+                              },
+                              child: Container(
+                                width: 15,
+                                height: 15,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+                                  border: Border.all(
+                                    color: const Color(0xFF00CC08), // Border color 00CC08
+                                    width: 2, // Border width
+                                  ),
+                                ),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF00E809), // Change the color to 00E809
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-
-
-
-
-
+                    
+                    AnimatedOpacity(
+                      opacity: _isGreyBubbleVisible ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: _isGreyBubbleVisible
+                          ? Align(
+                              alignment: Alignment.centerRight,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 10.0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: FractionallySizedBox(
+                                        widthFactor: 0.5,
+                                        child: Container(
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(20),
+                                              topLeft: Radius.circular(20),
+                                              bottomRight: Radius.circular(20),
+                                              bottomLeft: Radius.circular(20),
+                                            ),
+                                          ),
+                                          padding: const EdgeInsets.all(12),
+                                          child: const Text(
+                                            'Sie freut sich auch.',
+                                            style: TextStyle(
+                                              color: Color(0xFF232323),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 0,
+                                    right: 0,
+                                    child: Image.asset(
+                                      'assets/images/kibuddy-face.png',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
+                    ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
