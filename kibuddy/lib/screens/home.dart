@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
   });
 
   Future<Uint8List> loadBackgroundImage() async {
-    final ByteData data = await rootBundle.load('assets/images/whatsapp-bg-70.png');
+    final ByteData data = await rootBundle.load('assets/images/whatsapp-bg-50.png');
     return data.buffer.asUint8List();
   }
 
