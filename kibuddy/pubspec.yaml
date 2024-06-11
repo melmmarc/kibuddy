@@ -59,6 +59,7 @@ flutter:
     - assets/images/robot.png
     - assets/images/whatsapp-bg.jpeg
     - assets/images/red.png
+    - assets/images/kibuddy-face.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

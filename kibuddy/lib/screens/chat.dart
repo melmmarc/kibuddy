@@ -169,6 +169,52 @@ class ChatPage extends StatelessWidget {
     ],
   ),
 ),
+Align(
+  alignment: Alignment.bottomRight,
+  child: Padding(
+    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 55.0, 0), // Adjusted right padding to 55
+    child: FractionallySizedBox(
+      widthFactor: 0.6,
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFFD9D9D9),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+            ),
+            padding: const EdgeInsets.all(12),
+            child: const Text(
+              'Sie freut sich auch.',
+              style: TextStyle(
+                color: Color(0xFF232323),
+                fontWeight: FontWeight.w500,
+                fontSize: 15,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Image.asset(
+              'assets/images/kibuddy-face.png',
+              width: 40,
+              height: 40,
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
+),
+
+
+
+
 
                   Align(
                     alignment: Alignment.centerRight,
@@ -244,8 +290,8 @@ class ChatPage extends StatelessWidget {
             ),
           ),
           child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFFBEE7A), // Circle color FBEE7A
+            decoration: const BoxDecoration(
+              color: Color(0xFFFBEE7A), // Circle color FBEE7A
               shape: BoxShape.circle,
             ),
           ),
@@ -329,8 +375,8 @@ class ChatPage extends StatelessWidget {
             ),
           ),
           child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFFB2F2F), // Circle color FB2F2F
+            decoration: const BoxDecoration(
+              color: Color(0xFFFB2F2F), // Circle color FB2F2F
               shape: BoxShape.circle,
             ),
           ),
@@ -414,8 +460,8 @@ class ChatPage extends StatelessWidget {
             ),
           ),
           child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFAD4AFC), // Circle color AD4AFC
+            decoration: const BoxDecoration(
+              color: Color(0xFFAD4AFC), // Circle color AD4AFC
               shape: BoxShape.circle,
             ),
           ),
