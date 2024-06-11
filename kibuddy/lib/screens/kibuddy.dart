@@ -6,16 +6,21 @@ import 'settings.dart';
 class ChatBubble extends StatelessWidget {
   final String message;
 
-  const ChatBubble({super.key, required this.message});
+  const ChatBubble({super.key, Key? key2, required this.message});
 
   @override
   Widget build(BuildContext context) {
+    // Calculate the width based on 80% of the screen width
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double bubbleWidth = screenWidth * 0.8;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
+            width: bubbleWidth, // Set the width of the container
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -41,11 +46,36 @@ class ChatBubble extends StatelessWidget {
   }
 }
 
+
 class KIBuddyPage extends StatelessWidget {
-  const KIBuddyPage({super.key});
+  final bool firstMessageClicked;
+  final bool secondMessageClicked;
+  final bool thirdMessageClicked;
+  final bool fourthMessageClicked;
+
+  const KIBuddyPage({
+    super.key,
+    required this.firstMessageClicked,
+    required this.secondMessageClicked,
+    required this.thirdMessageClicked,
+    required this.fourthMessageClicked,
+  });
 
   @override
   Widget build(BuildContext context) {
+    String message;
+    if (firstMessageClicked) {
+      message = "Megan scheint sich auch auf dich zu freuen, kein Grund zur Sorge.";
+    } else if (secondMessageClicked) {
+      message = "Ich bin mir auch nicht ganz sicher wie ich diese Antwort deuten soll. Sei lieber etwas vorsichtig.";
+    } else if (thirdMessageClicked) {
+      message = "Megan scheint sauer auf dich zu sein, da sie sich auf dich gefreut hat und du kurzfristig abgesagt hast.";
+    } else if (fourthMessageClicked) {
+      message = "Sarkasmus! Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.";
+    } else {
+      message = "Wie kann ich helfen?"; // Default message if none of the buttons are clicked
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -116,8 +146,8 @@ class KIBuddyPage extends StatelessWidget {
               ),
               Transform.translate(
                 offset: const Offset(0.0, -55.0), // Adjust the vertical offset
-                child: const ChatBubble(
-                  message: 'Wie kann ich helfen?',
+                child: ChatBubble(
+                  message: message,
                 ),
               ),
               Expanded(
@@ -129,6 +159,7 @@ class KIBuddyPage extends StatelessWidget {
           ),
         ],
       ),
+      
       bottomNavigationBar: BottomAppBar(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0),

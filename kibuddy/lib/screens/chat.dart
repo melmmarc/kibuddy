@@ -89,9 +89,16 @@ class _ChatPageState extends State<ChatPage> {
                     onPressed: () {
                       // Navigate to the KIBuddyPage when the robot icon is clicked
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KIBuddyPage is the name of your screen
-                      );
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: false,
+      secondMessageClicked: false,
+      thirdMessageClicked: false,
+      fourthMessageClicked: false,
+    ),
+  ),
+);
                     },
                   ),
                 ),

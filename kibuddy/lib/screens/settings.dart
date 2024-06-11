@@ -24,9 +24,16 @@ class SettingsPage extends StatelessWidget {
     color: const Color(0xFF3297B7),
     onPressed: () {
     Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const KIBuddyPage()), // Assuming KiBuddy is the name of your screen
-    );
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: false,
+      secondMessageClicked: false,
+      thirdMessageClicked: false,
+      fourthMessageClicked: false,
+    ),
+  ),
+);
   },
   ),
   automaticallyImplyLeading: false, // This removes the automatically generated back button
