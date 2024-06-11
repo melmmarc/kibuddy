@@ -73,7 +73,7 @@ class KIBuddyPage extends StatelessWidget {
     } else if (fourthMessageClicked) {
       message = "Sarkasmus! Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.";
     } else {
-      message = "Wie kann ich helfen?"; // Default message if none of the buttons are clicked
+      message = "Wie kann ich dir heute behilflich sein?"; // Default message if none of the buttons are clicked
     }
 
     return Scaffold(
