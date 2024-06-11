@@ -202,57 +202,75 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                     ),
                     
-                    AnimatedOpacity(
-                      opacity: _isFirstGreyBubbleVisible ? 1.0 : 0.0,
-                      duration: const Duration(milliseconds: 300),
-                      child: _isFirstGreyBubbleVisible
-                          ? Align(
-                              alignment: Alignment.centerRight,
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(left: 10.0),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: FractionallySizedBox(
-                                        widthFactor: 0.5,
-                                        child: Container(
-                                          decoration: const BoxDecoration(
-                                            color: Color(0xFFD9D9D9),
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(20),
-                                              topLeft: Radius.circular(20),
-                                              bottomRight: Radius.circular(20),
-                                              bottomLeft: Radius.circular(20),
-                                            ),
-                                          ),
-                                          padding: const EdgeInsets.all(12),
-                                          child: const Text(
-                                            'Sie freut sich auch.',
-                                            style: TextStyle(
-                                              color: Color(0xFF232323),
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 0,
-                                    right: 0,
-                                    child: Image.asset(
-                                      'assets/images/kibuddy-face.png',
-                                      width: 40,
-                                      height: 40,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          : Container(),
+                    
+                    GestureDetector(
+  onTap: () {
+    Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: true,
+      secondMessageClicked: false,
+      thirdMessageClicked: false,
+      fourthMessageClicked: false,
+    ),
+  ),
+);
+  },
+  child: AnimatedOpacity(
+    opacity: _isFirstGreyBubbleVisible ? 1.0 : 0.0,
+    duration: const Duration(milliseconds: 300),
+    child: _isFirstGreyBubbleVisible
+        ? Align(
+            alignment: Alignment.centerRight,
+            child: Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 10.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.5, // Set the width
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: const Text(
+                          'Sie freut sich auch.',
+                          style: TextStyle(
+                            color: Color(0xFF232323),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
                     ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Image.asset(
+                    'assets/images/kibuddy-face.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container(),
+  ),
+),
+
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -347,57 +365,73 @@ class _ChatPageState extends State<ChatPage> {
   ),
 ),
 
-AnimatedOpacity(
-                      opacity: _isSecondGreyBubbleVisible ? 1.0 : 0.0,
-                      duration: const Duration(milliseconds: 300),
-                      child: _isSecondGreyBubbleVisible
-                          ? Align(
-                    alignment: Alignment.centerRight,
-                    child: Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 10.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: FractionallySizedBox(
-                              widthFactor: 0.55,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    topLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
-                                  ),
-                                ),
-                                padding: const EdgeInsets.all(12),
-                                child: const Text(
-                                  'Hmm... sei vorsichtig.',
-                                  style: TextStyle(
-                                    color: Color(0xFF232323),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ),
+GestureDetector(
+  onTap: () {
+    Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: false,
+      secondMessageClicked: true,
+      thirdMessageClicked: false,
+      fourthMessageClicked: false,
+    ),
+  ),
+);
+  },
+  child: AnimatedOpacity(
+    opacity: _isSecondGreyBubbleVisible ? 1.0 : 0.0,
+    duration: const Duration(milliseconds: 300),
+    child: _isSecondGreyBubbleVisible
+        ? Align(
+            alignment: Alignment.centerRight,
+            child: Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 10.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: FractionallySizedBox(
+                      widthFactor: 0.55,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
                           ),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Image.asset(
-                            'assets/images/kibuddy-face.png',
-                            width: 40,
-                            height: 40,
+                        padding: const EdgeInsets.all(12),
+                        child: const Text(
+                          'Hmm... sei vorsichtig.',
+                          style: TextStyle(
+                            color: Color(0xFF232323),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
                           ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          : Container(),
+                        ),
+                      ),
                     ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Image.asset(
+                    'assets/images/kibuddy-face.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container(),
+  ),
+),
+
 
 
 
@@ -496,57 +530,73 @@ AnimatedOpacity(
 ),
 
 
-AnimatedOpacity(
-                      opacity: _isThirdGreyBubbleVisible ? 1.0 : 0.0,
-                      duration: const Duration(milliseconds: 300),
-                      child: _isThirdGreyBubbleVisible
-                          ? Align(
-                    alignment: Alignment.centerRight,
-                    child: Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 10.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: FractionallySizedBox(
-                              widthFactor: 0.55,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    topLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
-                                  ),
-                                ),
-                                padding: const EdgeInsets.all(12),
-                                child: const Text(
-                                  'Sie ist sauer auf dich.',
-                                  style: TextStyle(
-                                    color: Color(0xFF232323),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ),
+GestureDetector(
+  onTap: () {
+    Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: false,
+      secondMessageClicked: false,
+      thirdMessageClicked: true,
+      fourthMessageClicked: false,
+    ),
+  ),
+);
+  },
+  child: AnimatedOpacity(
+    opacity: _isThirdGreyBubbleVisible ? 1.0 : 0.0,
+    duration: const Duration(milliseconds: 300),
+    child: _isThirdGreyBubbleVisible
+        ? Align(
+            alignment: Alignment.centerRight,
+            child: Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 10.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: FractionallySizedBox(
+                      widthFactor: 0.55,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
                           ),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Image.asset(
-                            'assets/images/kibuddy-face.png',
-                            width: 40,
-                            height: 40,
+                        padding: const EdgeInsets.all(12),
+                        child: const Text(
+                          'Sie ist sauer auf dich.',
+                          style: TextStyle(
+                            color: Color(0xFF232323),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
                           ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          : Container(),
+                        ),
+                      ),
                     ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Image.asset(
+                    'assets/images/kibuddy-face.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container(),
+  ),
+),
+
 
 
                   Align(
@@ -578,6 +628,7 @@ AnimatedOpacity(
                       ),
                     ),
                   ),
+                  
                   Align(
   alignment: Alignment.centerLeft,
   child: Stack(
@@ -643,57 +694,73 @@ AnimatedOpacity(
   ),
 ),
 
-AnimatedOpacity(
-                      opacity: _isFourthGreyBubbleVisible ? 1.0 : 0.0,
-                      duration: const Duration(milliseconds: 300),
-                      child: _isFourthGreyBubbleVisible
-                          ? Align(
-                    alignment: Alignment.centerRight,
-                    child: Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 10.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: FractionallySizedBox(
-                              widthFactor: 0.65,
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    topLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
-                                  ),
-                                ),
-                                padding: const EdgeInsets.all(12),
-                                child: const Text(
-                                  'Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.',
-                                  style: TextStyle(
-                                    color: Color(0xFF232323),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ),
+GestureDetector(
+  onTap: () {
+   Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const KIBuddyPage(
+      firstMessageClicked: false,
+      secondMessageClicked: false,
+      thirdMessageClicked: false,
+      fourthMessageClicked: true,
+    ),
+  ),
+);
+  },
+  child: AnimatedOpacity(
+    opacity: _isFourthGreyBubbleVisible ? 1.0 : 0.0,
+    duration: const Duration(milliseconds: 300),
+    child: _isFourthGreyBubbleVisible
+        ? Align(
+            alignment: Alignment.centerRight,
+            child: Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 10.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: FractionallySizedBox(
+                      widthFactor: 0.65,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
                           ),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Image.asset(
-                            'assets/images/kibuddy-face.png',
-                            width: 40,
-                            height: 40,
+                        padding: const EdgeInsets.all(12),
+                        child: const Text(
+                          'Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.',
+                          style: TextStyle(
+                            color: Color(0xFF232323),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
                           ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          : Container(),
+                        ),
+                      ),
                     ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Image.asset(
+                    'assets/images/kibuddy-face.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container(),
+  ),
+),
+
 
                 ],
               ),
