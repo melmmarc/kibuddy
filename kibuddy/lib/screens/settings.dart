@@ -172,12 +172,124 @@ class _SettingsPageState extends State<SettingsPage> {
                                         ),
                                       ],
                                     )
-                                  : Center(
-                                      child: Text(
-                                        'Box ${index + 1}',
-                                        style: const TextStyle(fontSize: 18),
-                                      ),
-                                    ),
+                                  : index == 3
+                                      ? Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 30),
+                                              child: Container(
+                                                width: 16,
+                                                height: 16,
+                                                decoration: const BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: Color(0xFFFBEE7A), // Yellow color
+                                                ),
+                                              ),
+                                            ),
+                                            const SizedBox(width: 22),
+                                            const Text(
+                                              'Ungewiss', // Changed text to "Ungewiss"
+                                              style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                            ),
+                                            const Spacer(),
+                                            Padding(
+                                              padding: const EdgeInsets.only(right: 10),
+                                              child: Transform.scale(
+                                                scale: 0.8,
+                                                child: CupertinoSwitch(
+                                                  value: isSwitched,
+                                                  onChanged: (value) {
+                                                    setState(() {
+                                                      isSwitched = value; // Update the state variable
+                                                    });
+                                                  },
+                                                  activeColor: const Color(0xFF6edc5f),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      : index == 4
+                                          ? Row(
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.only(left: 30),
+                                                  child: Container(
+                                                    width: 16,
+                                                    height: 16,
+                                                    decoration: const BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      color: Color(0xFFFB2F2F), // Red color
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(width: 22),
+                                                const Text(
+                                                  'Negativ', // Changed text to "Negativ"
+                                                  style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                                ),
+                                                const Spacer(),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(right: 10),
+                                                  child: Transform.scale(
+                                                    scale: 0.8,
+                                                    child: CupertinoSwitch(
+                                                      value: isSwitched,
+                                                      onChanged: (value) {
+                                                        setState(() {
+                                                          isSwitched = value; // Update the state variable
+                                                        });
+                                                      },
+                                                      activeColor: const Color(0xFF6edc5f),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                          : index == 5
+                                              ? Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(left: 30),
+                                                      child: Container(
+                                                        width
+                                                        : 16,
+                                                        height: 16,
+                                                        decoration: const BoxDecoration(
+                                                          shape: BoxShape.circle,
+                                                          color: Color(0xFFAD4AFC), // Purple color
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    const SizedBox(width: 22),
+                                                    const Text(
+                                                      'Sarkasmus', // Text changed to "Sarkasmus"
+                                                      style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                                    ),
+                                                    const Spacer(),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(right: 10),
+                                                      child: Transform.scale(
+                                                        scale: 0.8,
+                                                        child: CupertinoSwitch(
+                                                          value: isSwitched,
+                                                          onChanged: (value) {
+                                                            setState(() {
+                                                              isSwitched = value; // Update the state variable
+                                                            });
+                                                          },
+                                                          activeColor: const Color(0xFF6edc5f),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                              : Center(
+                                                  child: Text(
+                                                    'Box ${index + 1}',
+                                                    style: const TextStyle(fontSize: 18),
+                                                  ),
+                                                ),
                         );
                 },
               ),
@@ -188,3 +300,4 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
+
