@@ -86,6 +86,7 @@ class ChatPage extends StatelessWidget {
               ],
             ),
             Expanded(
+              child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -310,6 +311,54 @@ Align(
   ),
 ),
 
+Align(
+                    alignment: Alignment.centerRight,
+                    child: Stack(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 10.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: FractionallySizedBox(
+                              widthFactor: 0.55,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFD9D9D9),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(20),
+                                    topLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Hmm... sei vorsichtig.',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Image.asset(
+                            'assets/images/kibuddy-face.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -396,6 +445,54 @@ Align(
     ],
   ),
 ),
+
+
+Align(
+                    alignment: Alignment.centerRight,
+                    child: Stack(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 10.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: FractionallySizedBox(
+                              widthFactor: 0.55,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFD9D9D9),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(20),
+                                    topLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Sie ist sauer auf dich.',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Image.asset(
+                            'assets/images/kibuddy-face.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
 
                   Align(
                     alignment: Alignment.centerRight,
@@ -484,12 +581,60 @@ Align(
   ),
 ),
 
+Align(
+                    alignment: Alignment.centerRight,
+                    child: Stack(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 10.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: FractionallySizedBox(
+                              widthFactor: 0.65,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFD9D9D9),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(20),
+                                    topLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Image.asset(
+                            'assets/images/kibuddy-face.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
                 ],
               ),
             ),
+            )
           ],
         ),
       ),
+    
       bottomNavigationBar: BottomAppBar(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0),
