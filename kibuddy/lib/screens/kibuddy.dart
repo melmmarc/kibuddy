@@ -3,6 +3,44 @@ import 'package:flutter/cupertino.dart';
 import 'chat.dart';
 import 'settings.dart';
 
+class ChatBubble extends StatelessWidget {
+  final String message;
+
+  const ChatBubble({super.key, required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0),
+                bottomLeft: Radius.circular(20.0),
+                bottomRight: Radius.circular(20.0),
+              ),
+            ),
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              message,
+              style: const TextStyle(
+                fontSize: 15.0,
+                color: Color(0xFF232323),
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class KIBuddyPage extends StatelessWidget {
   const KIBuddyPage({super.key});
 
@@ -58,14 +96,14 @@ class KIBuddyPage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 0.0), // Adjust the top padding here
+                padding: const EdgeInsets.only(top: 0.0),
                 child: Transform.translate(
-                  offset: const Offset(0.0, -30.0), // Adjust the vertical offset as needed
+                  offset: const Offset(0.0, -30.0),
                   child: Transform.scale(
-                    scale: 0.8, // Adjust the scale factor as needed
+                    scale: 0.8,
                     child: Container(
                       width: double.infinity,
-                      height: 450, // Adjust the height as needed
+                      height: 450,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/kibuddy-body.png'),
@@ -74,6 +112,12 @@ class KIBuddyPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Transform.translate(
+                offset: const Offset(0.0, -55.0), // Adjust the vertical offset
+                child: const ChatBubble(
+                  message: 'Wie kann ich helfen?',
                 ),
               ),
               Expanded(
