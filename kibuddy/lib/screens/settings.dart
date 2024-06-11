@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'kibuddy.dart';
+import 'package:flutter/cupertino.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -104,12 +105,13 @@ itemBuilder: (context, index) {
                       padding: EdgeInsets.only(left: 25), // Add 25px margin to the left
                       child: Icon(
                         Icons.language, // iOS language/world icon
+                        size: 28,
                         color: Color(0xFF3297B7), // Adjust icon color as needed
                       ),
                     ),
                     SizedBox(width: 15), // Add spacing between the icon and the text
                     Text(
-                      'Sprache',
+                      'Sprache', // Change from "Sprache" to "Positiv"
                       style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
@@ -119,7 +121,7 @@ itemBuilder: (context, index) {
                     ),
                     SizedBox(width: 10), // Add spacing between the text and the arrow
                     Padding(
-                      padding: EdgeInsets.only(right: 25), // Add 25px margin to the right
+                      padding: EdgeInsets.only(right: 10), // Add 10px margin to the right
                       child: Icon(
                         Icons.arrow_forward_ios, // iOS arrow pointing to the right
                         size: 20,
@@ -128,14 +130,50 @@ itemBuilder: (context, index) {
                     ),
                   ],
                 )
-              : Center(
-                  child: Text(
-                    'Box ${index + 1}',
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ),
+              : index == 2
+                  ? Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30), // Add 25px margin to the left
+                          child: Container(
+                            width: 16, // Adjust the width of the green circle
+                            height: 16, // Adjust the height of the green circle
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFF00E809)
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 22), // Add spacing between the green circle and the text
+                        const Text(
+                          'Positiv', // Change from "Sprache" to "Positiv"
+                          style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                        ),
+                        const Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10), // Add 10px margin to the right
+                          child: Transform.scale(
+                            scale: 0.8, // Adjust the scale to make the switch smaller
+                            child: CupertinoSwitch(
+                              value: true, // Toggle button turned on
+                              onChanged: (value) {}, // Function to handle toggle changes
+                              activeColor: const Color(0xFF6edc5f), // Color of the toggle when turned on
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Center(
+                      child: Text(
+                        'Box ${index + 1}',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    ),
         );
 },
+
+
+
 
 
 
