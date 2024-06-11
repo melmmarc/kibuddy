@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ChatPage(), // Set ChatPage as the home widget
+      home: const ChatPage(greenToggledOn: true, yellowToggledOn: true, redToggledOn: true, purpleToggledOn: true, firstMessageClicked: true, secondMessageClicked: true, thirdMessageClicked: true, fourthMessageClicked: true,), // Set ChatPage as the home widget
       debugShowCheckedModeBanner: false, // Remove the debug banner
     );
   }

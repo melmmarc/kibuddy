@@ -2,20 +2,27 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'kibuddy.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+  bool greenToggledOn;
+  bool yellowToggledOn;
+  bool redToggledOn;
+  bool purpleToggledOn;
+
+  SettingsPage({
+    super.key,
+    this.greenToggledOn = false,
+    this.yellowToggledOn = false,
+    this.redToggledOn = false,
+    this.purpleToggledOn = false,
+  });
 
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool greenSwitched = true; 
-  bool yellowSwitched = true; 
-  bool redSwitched = true; 
-  bool purpleSwitched = true; 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +42,21 @@ class _SettingsPageState extends State<SettingsPage> {
                 icon: const Icon(Icons.arrow_back_ios_new),
                 color: const Color(0xFF3297B7),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => KIBuddyPage(
+                        firstMessageClicked: false,
+                        secondMessageClicked: false,
+                        thirdMessageClicked: false,
+                        fourthMessageClicked: false,
+                        greenToggledOn: widget.greenToggledOn,
+                        yellowToggledOn: widget.yellowToggledOn,
+                        redToggledOn: widget.redToggledOn,
+                        purpleToggledOn: widget.purpleToggledOn,
+                      ),
+                    ),
+                  );
                 },
               ),
               automaticallyImplyLeading: false,
@@ -163,10 +184,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                           child: Transform.scale(
                                             scale: 0.8,
                                             child: CupertinoSwitch(
-                                              value: greenSwitched,
+                                              value: widget.greenToggledOn,
                                               onChanged: (value) {
                                                 setState(() {
-                                                  greenSwitched = value; // Update the state variable
+                                                  widget.greenToggledOn = value;
                                                 });
                                               },
                                               activeColor: const Color(0xFF6edc5f),
@@ -200,11 +221,11 @@ class _SettingsPageState extends State<SettingsPage> {
                                               child: Transform.scale(
                                                 scale: 0.8,
                                                 child: CupertinoSwitch(
-                                                  value: yellowSwitched,
+                                                  value: widget.yellowToggledOn,
                                                   onChanged: (value) {
-                                                    setState(() {
-                                                      yellowSwitched = value; // Update the state variable
-                                                    });
+                                                   setState(() {
+                                                      widget.yellowToggledOn = value;
+                                                });
                                                   },
                                                   activeColor: const Color(0xFF6edc5f),
                                                 ),
@@ -227,7 +248,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                                   ),
                                                 ),
                                                 const SizedBox(width: 22),
-                                                const Text(
+                                                                                               const Text(
                                                   'Negativ', // Changed text to "Negativ"
                                                   style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
                                                 ),
@@ -237,11 +258,11 @@ class _SettingsPageState extends State<SettingsPage> {
                                                   child: Transform.scale(
                                                     scale: 0.8,
                                                     child: CupertinoSwitch(
-                                                      value: redSwitched,
+                                                      value: widget.redToggledOn,
                                                       onChanged: (value) {
                                                         setState(() {
-                                                          redSwitched = value; // Update the state variable
-                                                        });
+                                                  widget.redToggledOn = value;
+                                                });
                                                       },
                                                       activeColor: const Color(0xFF6edc5f),
                                                     ),
@@ -255,8 +276,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                                     Padding(
                                                       padding: const EdgeInsets.only(left: 30),
                                                       child: Container(
-                                                        width
-                                                        : 16,
+                                                        width: 16,
                                                         height: 16,
                                                         decoration: const BoxDecoration(
                                                           shape: BoxShape.circle,
@@ -275,11 +295,11 @@ class _SettingsPageState extends State<SettingsPage> {
                                                       child: Transform.scale(
                                                         scale: 0.8,
                                                         child: CupertinoSwitch(
-                                                          value: purpleSwitched,
+                                                          value: widget.purpleToggledOn,
                                                           onChanged: (value) {
                                                             setState(() {
-                                                              purpleSwitched = value; // Update the state variable
-                                                            });
+                                                  widget.purpleToggledOn = value;
+                                                });
                                                           },
                                                           activeColor: const Color(0xFF6edc5f),
                                                         ),

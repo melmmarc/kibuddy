@@ -53,12 +53,22 @@ class KIBuddyPage extends StatelessWidget {
   final bool thirdMessageClicked;
   final bool fourthMessageClicked;
 
+  final bool greenToggledOn;
+  final bool yellowToggledOn;
+  final bool redToggledOn;
+  final bool purpleToggledOn;
+
   const KIBuddyPage({
     super.key,
     required this.firstMessageClicked,
     required this.secondMessageClicked,
     required this.thirdMessageClicked,
     required this.fourthMessageClicked,
+
+    required this.greenToggledOn,
+    required this.yellowToggledOn,
+    required this.redToggledOn,
+    required this.purpleToggledOn,
   });
 
   @override
@@ -97,9 +107,20 @@ class KIBuddyPage extends StatelessWidget {
                   color: const Color(0xFF3297B7),
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ChatPage()),
-                    );
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChatPage(
+                        firstMessageClicked: false,
+                        secondMessageClicked: false,
+                        thirdMessageClicked: false,
+                        fourthMessageClicked: false,
+                        greenToggledOn: greenToggledOn,
+                        yellowToggledOn: yellowToggledOn,
+                        redToggledOn: redToggledOn,
+                        purpleToggledOn: purpleToggledOn,
+                      ),
+                    ),
+                  );
                   },
                 ),
                 automaticallyImplyLeading: false,
@@ -118,9 +139,16 @@ class KIBuddyPage extends StatelessWidget {
                     color: const Color(0xFF3297B7),
                     onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SettingsPage()),
-                      );
+  context,
+  MaterialPageRoute(
+    builder: (context) => SettingsPage(
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
+    ),
+  ),
+);
                     },
                   ),
                 ],

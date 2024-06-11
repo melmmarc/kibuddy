@@ -1,13 +1,31 @@
-// ignore_for_file: library_private_types_in_public_api, unused_field, prefer_final_fields
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'kibuddy.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+  final bool greenToggledOn;
+  final bool yellowToggledOn;
+  final bool redToggledOn;
+  final bool purpleToggledOn;
+  final bool firstMessageClicked;
+  final bool secondMessageClicked;
+  final bool thirdMessageClicked;
+  final bool fourthMessageClicked;
+
+  const ChatPage({
+    super.key,
+    required this.greenToggledOn,
+    required this.yellowToggledOn,
+    required this.redToggledOn,
+    required this.purpleToggledOn,
+    required this.firstMessageClicked,
+    required this.secondMessageClicked,
+    required this.thirdMessageClicked,
+    required this.fourthMessageClicked,
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _ChatPageState createState() => _ChatPageState();
 }
 
@@ -16,10 +34,14 @@ class _ChatPageState extends State<ChatPage> {
   bool _isSecondGreyBubbleVisible = false;
   bool _isThirdGreyBubbleVisible = false;
   bool _isFourthGreyBubbleVisible = false;
-  
 
   @override
   Widget build(BuildContext context) {
+    bool greenToggledOn = widget.greenToggledOn;
+    bool yellowToggledOn = widget.yellowToggledOn;
+    bool redToggledOn = widget.redToggledOn;
+    bool purpleToggledOn = widget.purpleToggledOn;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -92,11 +114,15 @@ class _ChatPageState extends State<ChatPage> {
                       Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (context) => const KIBuddyPage(
+    builder: (context) => KIBuddyPage(
       firstMessageClicked: false,
       secondMessageClicked: false,
       thirdMessageClicked: false,
       fourthMessageClicked: false,
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
     ),
   ),
 );
@@ -172,33 +198,34 @@ class _ChatPageState extends State<ChatPage> {
                             ),
                           ),
                           Positioned(
-                            bottom: 0,
-                            left: 10,
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _isFirstGreyBubbleVisible = !_isFirstGreyBubbleVisible;
-                                });
-                              },
-                              child: Container(
-                                width: 15,
-                                height: 15,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-                                  border: Border.all(
-                                    color: const Color(0xFF00CC08), // Border color 00CC08
-                                    width: 2, // Border width
-                                  ),
-                                ),
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    color: Color(0xFF00E809), // Change the color to 00E809
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+  bottom: 0,
+  left: 10,
+  child: GestureDetector(
+    onTap: () {
+      setState(() {
+        _isFirstGreyBubbleVisible = !_isFirstGreyBubbleVisible;
+      });
+    },
+    child: greenToggledOn ? Container(
+      width: 15,
+      height: 15,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
+        border: Border.all(
+          color: const Color(0xFF00CC08), // Border color 00CC08
+          width: 2, // Border width
+        ),
+      ),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xFF00E809), // Change the color to 00E809
+          shape: BoxShape.circle,
+        ),
+      ),
+    ) : const SizedBox(), // if greenToggledOn is false, render an empty SizedBox
+  ),
+),
+
                         ],
                       ),
                     ),
@@ -209,11 +236,15 @@ class _ChatPageState extends State<ChatPage> {
     Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (context) => const KIBuddyPage(
+    builder: (context) => KIBuddyPage(
       firstMessageClicked: true,
       secondMessageClicked: false,
       thirdMessageClicked: false,
       fourthMessageClicked: false,
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
     ),
   ),
 );
@@ -371,11 +402,15 @@ GestureDetector(
     Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (context) => const KIBuddyPage(
+    builder: (context) => KIBuddyPage(
       firstMessageClicked: false,
       secondMessageClicked: true,
       thirdMessageClicked: false,
       fourthMessageClicked: false,
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
     ),
   ),
 );
@@ -536,11 +571,15 @@ GestureDetector(
     Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (context) => const KIBuddyPage(
+    builder: (context) => KIBuddyPage(
       firstMessageClicked: false,
       secondMessageClicked: false,
       thirdMessageClicked: true,
       fourthMessageClicked: false,
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
     ),
   ),
 );
@@ -700,11 +739,15 @@ GestureDetector(
    Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (context) => const KIBuddyPage(
+    builder: (context) => KIBuddyPage(
       firstMessageClicked: false,
       secondMessageClicked: false,
       thirdMessageClicked: false,
       fourthMessageClicked: true,
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
     ),
   ),
 );
