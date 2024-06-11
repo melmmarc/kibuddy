@@ -1,9 +1,18 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'kibuddy.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key, Key? key2});
+class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
+
+  @override
+  _ChatPageState createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  bool _isGreyBubbleVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -151,6 +160,12 @@ class ChatPage extends StatelessWidget {
       Positioned(
         bottom: 0,
         left: 10, 
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              _isGreyBubbleVisible = !_isGreyBubbleVisible;
+            });
+          },
         child: Container(
           width: 15, 
           height: 15, 
@@ -169,11 +184,12 @@ class ChatPage extends StatelessWidget {
           ),
         ),
       ),
+    )
     ],
   ),
 ),
 
-
+if (_isGreyBubbleVisible)
 Align(
                     alignment: Alignment.centerRight,
                     child: Stack(
