@@ -40,19 +40,53 @@ class SettingsPage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemCount: 6, // Number of white boxes
-                itemBuilder: (context, index) {
+
+itemBuilder: (context, index) {
   return index == 0
       ? Transform.translate(
           offset: const Offset(0, -20),
           child: Container(
-            height: 85, // Adjust height as needed
+            height: 85, // Adjusted height to 85px
             color: Colors.white,
             margin: const EdgeInsets.only(bottom: 5),
-            child: Center(
-              child: Text(
-                'Box ${index + 1}',
-                style: const TextStyle(fontSize: 18),
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 25, top: 10), // Add 30px margin to the left and 15px margin to the top
+                      child: Image.asset(
+                        'assets/images/kibuddy-circled.png', // Your image path
+                        width: 50, // Adjust width as needed
+                        height: 50, // Adjust height as needed
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20, top: 20), // Add 30px margin to the left and 20px margin to the top
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'KI-Buddy',
+                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Transform.translate(
+                  offset: const Offset(0, -5), // Move the text 5px higher
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 22, top: 5), // Add 30px margin to the left
+                    child: Text(
+                      'Bearbeiten',
+                      style: TextStyle(fontSize: 10, color: Color(0xFF3297B7),fontWeight: FontWeight.w500,),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         )
@@ -60,7 +94,7 @@ class SettingsPage extends StatelessWidget {
           height: 55, // Adjust height as needed
           color: Colors.white,
           margin: index == 1
-              ? const EdgeInsets.fromLTRB(0, 0, 0, 20) // Add 30px more margin at the bottom for Box 2
+              ? const EdgeInsets.fromLTRB(0, 0, 0, 20) // Add 20px more margin at the bottom for Box 2
               : const EdgeInsets.symmetric(vertical: 2), // Standard margin
           child: Center(
             child: Text(
@@ -70,6 +104,13 @@ class SettingsPage extends StatelessWidget {
           ),
         );
 },
+
+
+
+
+
+
+
               ),
             ),
           ],
