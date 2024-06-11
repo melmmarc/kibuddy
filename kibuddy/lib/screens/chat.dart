@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,7 +12,10 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  bool _isGreyBubbleVisible = false;
+  bool _isFirstGreyBubbleVisible = false;
+  bool _isSecondGreyBubbleVisible = false;
+  bool _isThirdGreyBubbleVisible = false;
+  bool _isFourthGreyBubbleVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +169,7 @@ class _ChatPageState extends State<ChatPage> {
                             child: GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  _isGreyBubbleVisible = !_isGreyBubbleVisible;
+                                  _isFirstGreyBubbleVisible = !_isFirstGreyBubbleVisible;
                                 });
                               },
                               child: Container(
@@ -193,9 +196,9 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                     
                     AnimatedOpacity(
-                      opacity: _isGreyBubbleVisible ? 1.0 : 0.0,
+                      opacity: _isFirstGreyBubbleVisible ? 1.0 : 0.0,
                       duration: const Duration(milliseconds: 300),
-                      child: _isGreyBubbleVisible
+                      child: _isFirstGreyBubbleVisible
                           ? Align(
                               alignment: Alignment.centerRight,
                               child: Stack(
@@ -308,6 +311,12 @@ class _ChatPageState extends State<ChatPage> {
       Positioned(
         bottom: 0,
         left: 10,
+        child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _isSecondGreyBubbleVisible = !_isSecondGreyBubbleVisible;
+                                });
+                              },
         child: Container(
           width: 15,
           height: 15,
@@ -323,6 +332,7 @@ class _ChatPageState extends State<ChatPage> {
               color: Color(0xFFFBEE7A), // Circle color FBEE7A
               shape: BoxShape.circle,
             ),
+            )
           ),
         ),
       ),
@@ -330,7 +340,11 @@ class _ChatPageState extends State<ChatPage> {
   ),
 ),
 
-Align(
+AnimatedOpacity(
+                      opacity: _isSecondGreyBubbleVisible ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: _isSecondGreyBubbleVisible
+                          ? Align(
                     alignment: Alignment.centerRight,
                     child: Stack(
                       children: [
@@ -371,10 +385,12 @@ Align(
                             width: 40,
                             height: 40,
                           ),
-                        ),
-                      ],
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
                     ),
-                  ),
 
 
 
@@ -443,6 +459,12 @@ Align(
       Positioned(
         bottom: 0,
         left: 10,
+        child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _isThirdGreyBubbleVisible = !_isThirdGreyBubbleVisible;
+                                });
+                              },
         child: Container(
           width: 15,
           height: 15,
@@ -458,6 +480,7 @@ Align(
               color: Color(0xFFFB2F2F), // Circle color FB2F2F
               shape: BoxShape.circle,
             ),
+            )
           ),
         ),
       ),
@@ -466,7 +489,11 @@ Align(
 ),
 
 
-Align(
+AnimatedOpacity(
+                      opacity: _isThirdGreyBubbleVisible ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: _isThirdGreyBubbleVisible
+                          ? Align(
                     alignment: Alignment.centerRight,
                     child: Stack(
                       children: [
@@ -507,10 +534,12 @@ Align(
                             width: 40,
                             height: 40,
                           ),
-                        ),
-                      ],
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
                     ),
-                  ),
 
 
                   Align(
@@ -578,6 +607,12 @@ Align(
       Positioned(
         bottom: 0,
         left: 10,
+        child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _isFourthGreyBubbleVisible = !_isFourthGreyBubbleVisible;
+                                });
+                              },
         child: Container(
           width: 15,
           height: 15,
@@ -593,6 +628,7 @@ Align(
               color: Color(0xFFAD4AFC), // Circle color AD4AFC
               shape: BoxShape.circle,
             ),
+            )
           ),
         ),
       ),
@@ -600,7 +636,11 @@ Align(
   ),
 ),
 
-Align(
+AnimatedOpacity(
+                      opacity: _isFourthGreyBubbleVisible ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: _isFourthGreyBubbleVisible
+                          ? Align(
                     alignment: Alignment.centerRight,
                     child: Stack(
                       children: [
@@ -641,10 +681,12 @@ Align(
                             width: 40,
                             height: 40,
                           ),
-                        ),
-                      ],
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(),
                     ),
-                  ),
 
                 ],
               ),
