@@ -24,7 +24,7 @@ class _SettingsPageState extends State<SettingsPage> {
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/whatsapp-bg.png'),
+            image: AssetImage('assets/images/whatsapp-bg-70.png'),
             fit: BoxFit.cover,
           ),
         ),
