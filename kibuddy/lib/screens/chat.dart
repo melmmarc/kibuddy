@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'kibuddy.dart';
+import 'home.dart';
 
 class ChatPage extends StatefulWidget {
   final bool greenToggledOn;
@@ -56,12 +57,23 @@ class _ChatPageState extends State<ChatPage> {
           children: [
             AppBar(
               leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new),
-                color: const Color(0xFF3297B7),
-                onPressed: () {
-                  //Navigator.of(context).pop();
-                },
-              ),
+  icon: const Icon(Icons.arrow_back_ios_new),
+  color: const Color(0xFF3297B7),
+  onPressed: () {
+                      Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => HomePage(
+      greenToggledOn: greenToggledOn,
+      yellowToggledOn: yellowToggledOn,
+      redToggledOn: redToggledOn,
+      purpleToggledOn: purpleToggledOn,
+    ),
+  ),
+);
+                    },
+),
+
               title: Row(
                 children: [
                   CircleAvatar(

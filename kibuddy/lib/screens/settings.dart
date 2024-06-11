@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'kibuddy.dart';
 
+// ignore: must_be_immutable
 class SettingsPage extends StatefulWidget {
   bool greenToggledOn;
   bool yellowToggledOn;
