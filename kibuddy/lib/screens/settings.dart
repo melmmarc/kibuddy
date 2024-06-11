@@ -41,6 +41,7 @@ class SettingsPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 6, // Number of white boxes
 
+
 itemBuilder: (context, index) {
   return index == 0
       ? Transform.translate(
@@ -55,7 +56,7 @@ itemBuilder: (context, index) {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 25, top: 10), // Add 30px margin to the left and 15px margin to the top
+                      padding: const EdgeInsets.only(left: 25, top: 10), // Add 25px margin to the left and 10px margin to the top
                       child: Image.asset(
                         'assets/images/kibuddy-circled.png', // Your image path
                         width: 50, // Adjust width as needed
@@ -63,7 +64,7 @@ itemBuilder: (context, index) {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(left: 20, top: 20), // Add 30px margin to the left and 20px margin to the top
+                      padding: EdgeInsets.only(left: 20, top: 20), // Add 20px margin to the left and 20px margin to the top
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -79,7 +80,7 @@ itemBuilder: (context, index) {
                 Transform.translate(
                   offset: const Offset(0, -5), // Move the text 5px higher
                   child: const Padding(
-                    padding: EdgeInsets.only(left: 22, top: 5), // Add 30px margin to the left
+                    padding: EdgeInsets.only(left: 22, top: 5), // Add 22px margin to the left and 5px margin to the top
                     child: Text(
                       'Bearbeiten',
                       style: TextStyle(fontSize: 10, color: Color(0xFF3297B7),fontWeight: FontWeight.w500,),
@@ -96,14 +97,48 @@ itemBuilder: (context, index) {
           margin: index == 1
               ? const EdgeInsets.fromLTRB(0, 0, 0, 20) // Add 20px more margin at the bottom for Box 2
               : const EdgeInsets.symmetric(vertical: 2), // Standard margin
-          child: Center(
-            child: Text(
-              'Box ${index + 1}',
-              style: const TextStyle(fontSize: 18),
-            ),
-          ),
+          child: index == 1
+              ? const Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 25), // Add 25px margin to the left
+                      child: Icon(
+                        Icons.language, // iOS language/world icon
+                        color: Color(0xFF3297B7), // Adjust icon color as needed
+                      ),
+                    ),
+                    SizedBox(width: 15), // Add spacing between the icon and the text
+                    Text(
+                      'Sprache',
+                      style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                    ),
+                    Spacer(),
+                    Text(
+                      'Deutsch', // Text next to the arrow pointing right
+                      style: TextStyle(fontSize: 16, color: Color(0xFFC8C7CC), fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(width: 10), // Add spacing between the text and the arrow
+                    Padding(
+                      padding: EdgeInsets.only(right: 25), // Add 25px margin to the right
+                      child: Icon(
+                        Icons.arrow_forward_ios, // iOS arrow pointing to the right
+                        size: 20,
+                        color: Color(0xFFC8C7CC), // Adjust icon color as needed
+                      ),
+                    ),
+                  ],
+                )
+              : Center(
+                  child: Text(
+                    'Box ${index + 1}',
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                ),
         );
 },
+
+
+
 
 
 
