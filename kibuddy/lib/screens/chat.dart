@@ -57,29 +57,29 @@ class _ChatPageState extends State<ChatPage> {
           children: [
             AppBar(
               leading: IconButton(
-  icon: const Icon(Icons.arrow_back_ios_new),
-  color: const Color(0xFF3297B7),
-  onPressed: () {
-                      Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => HomePage(
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
-                    },
-),
-
+                icon: const Icon(Icons.arrow_back_ios_new),
+                color: const Color(0xFF3297B7),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(
+                        greenToggledOn: greenToggledOn,
+                        yellowToggledOn: yellowToggledOn,
+                        redToggledOn: redToggledOn,
+                        purpleToggledOn: purpleToggledOn,
+                      ),
+                    ),
+                  );
+                },
+              ),
               title: Row(
                 children: [
                   CircleAvatar(
                     radius: 20,
                     backgroundColor: Colors.grey[300],
-                    backgroundImage: const AssetImage('assets/images/megan-fox.webp'),
+                    backgroundImage:
+                        const AssetImage('assets/images/megan-fox.webp'),
                   ),
                   const SizedBox(width: 10),
                   const Text(
@@ -124,20 +124,20 @@ class _ChatPageState extends State<ChatPage> {
                     onPressed: () {
                       // Navigate to the KIBuddyPage when the robot icon is clicked
                       Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => KIBuddyPage(
-      firstMessageClicked: false,
-      secondMessageClicked: false,
-      thirdMessageClicked: false,
-      fourthMessageClicked: false,
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => KIBuddyPage(
+                            firstMessageClicked: false,
+                            secondMessageClicked: false,
+                            thirdMessageClicked: false,
+                            fourthMessageClicked: false,
+                            greenToggledOn: greenToggledOn,
+                            yellowToggledOn: yellowToggledOn,
+                            redToggledOn: redToggledOn,
+                            purpleToggledOn: purpleToggledOn,
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ),
@@ -153,25 +153,53 @@ class _ChatPageState extends State<ChatPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: FractionallySizedBox(
-                          widthFactor: 0.85, // Set width factor to 85%
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFE2FFD4),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20),
+                          widthFactor: 0.88,
+                          child: Stack(
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFE2FFD4),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Hallo Schatz, ich freue mich dich heute Abend endlich wieder zu sehen 😁',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ),
-                            ),
-                            padding: const EdgeInsets.all(12),
-                            child: const Text(
-                              'Hallo Schatz, ich freue mich dich heute Abend endlich wieder zu sehen 😁',
-                              style: TextStyle(
-                                  color: Color(0xFF232323),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15), // Set text color to #232323
-                            ),
+                              Positioned(
+                                bottom: 8,
+                                right: 8,
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      '15:47',
+                                      style: TextStyle(
+                                        color: Color(0xFF7f9969),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                        width:
+                                            2), // Adjust the spacing between timestamp and checkmark image
+                                    Image.asset(
+                                      'assets/images/checkmarks.png', // Replace with your actual image path
+                                      height: 16,
+                                      width: 16,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -210,634 +238,717 @@ class _ChatPageState extends State<ChatPage> {
                             ),
                           ),
                           Positioned(
-  bottom: 0,
-  left: 10,
-  child: GestureDetector(
-    onTap: () {
-      setState(() {
-        _isFirstGreyBubbleVisible = !_isFirstGreyBubbleVisible;
-      });
-    },
-    child: greenToggledOn ? Container(
-      width: 15,
-      height: 15,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-        border: Border.all(
-          color: const Color(0xFF00CC08), // Border color 00CC08
-          width: 2, // Border width
-        ),
-      ),
-      child: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFF00E809), // Change the color to 00E809
-          shape: BoxShape.circle,
-        ),
-      ),
-    ) : const SizedBox(), // if greenToggledOn is false, render an empty SizedBox
-  ),
-),
-
+                            bottom: 0,
+                            left: 10,
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _isFirstGreyBubbleVisible =
+                                      !_isFirstGreyBubbleVisible;
+                                });
+                              },
+                              child: greenToggledOn
+                                  ? Container(
+                                      width: 15,
+                                      height: 15,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                            8.5), // Half of the width/height to make it a circle
+                                        border: Border.all(
+                                          color: const Color(
+                                              0xFF00CC08), // Border color 00CC08
+                                          width: 2, // Border width
+                                        ),
+                                      ),
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                          color: Color(
+                                              0xFF00E809), // Change the color to 00E809
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                    )
+                                  : const SizedBox(), // if greenToggledOn is false, render an empty SizedBox
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    
-                    
                     GestureDetector(
-  onTap: () {
-    Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => KIBuddyPage(
-      firstMessageClicked: true,
-      secondMessageClicked: false,
-      thirdMessageClicked: false,
-      fourthMessageClicked: false,
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
-  },
-  child: AnimatedOpacity(
-    opacity: _isFirstGreyBubbleVisible ? 1.0 : 0.0,
-    duration: const Duration(milliseconds: 300),
-    child: _isFirstGreyBubbleVisible
-        ? Align(
-            alignment: Alignment.centerRight,
-            child: Stack(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.5, // Set the width
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20),
-                            topLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                          ),
-                        ),
-                        padding: const EdgeInsets.all(12),
-                        child: const Text(
-                          'Sie freut sich auch.',
-                          style: TextStyle(
-                            color: Color(0xFF232323),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    'assets/images/kibuddy-face.png',
-                    width: 40,
-                    height: 40,
-                  ),
-                ),
-              ],
-            ),
-          )
-        : Container(),
-  ),
-),
-
-
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.75, // Set width factor to 75%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE2FFD4),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => KIBuddyPage(
+                              firstMessageClicked: true,
+                              secondMessageClicked: false,
+                              thirdMessageClicked: false,
+                              fourthMessageClicked: false,
+                              greenToggledOn: greenToggledOn,
+                              yellowToggledOn: yellowToggledOn,
+                              redToggledOn: redToggledOn,
+                              purpleToggledOn: purpleToggledOn,
                             ),
                           ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Ich schreib dir nochmal wenn ich Feierabend habe und losfahre',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
+                        );
+                      },
+                      child: AnimatedOpacity(
+                        opacity: _isFirstGreyBubbleVisible ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: _isFirstGreyBubbleVisible
+                            ? Align(
+                                alignment: Alignment.centerRight,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 10.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.5, // Set the width
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFD9D9D9),
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(20),
+                                                topLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                                bottomLeft: Radius.circular(20),
+                                              ),
+                                            ),
+                                            padding: const EdgeInsets.all(12),
+                                            child: const Text(
+                                              'Sie freut sich auch.',
+                                              style: TextStyle(
+                                                color: Color(0xFF232323),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 0,
+                                      child: Image.asset(
+                                        'assets/images/kibuddy-face.png',
+                                        width: 40,
+                                        height: 40,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: FractionallySizedBox(
+                          widthFactor: 0.80,
+                          child: Stack(
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFE2FFD4),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Ich schreib dir nochmal wenn ich Feierabend habe und losfahre',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                bottom: 8,
+                                right: 8,
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      '15:52',
+                                      style: TextStyle(
+                                        color: Color(0xFF7f9969),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                        width:
+                                            2), // Adjust the spacing between timestamp and checkmark image
+                                    Image.asset(
+                                      'assets/images/checkmarks.png', // Replace with your actual image path
+                                      height: 16,
+                                      width: 16,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: FractionallySizedBox(
+                                widthFactor: 0.35,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: const EdgeInsets.all(12),
+                                  child: const Text(
+                                    'Ja, mach das',
+                                    style: TextStyle(
+                                      color: Color(0xFF232323),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-  alignment: Alignment.centerLeft,
-  child: Stack(
-    children: [
-      Container(
-        margin: const EdgeInsets.only(left: 10.0),
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: FractionallySizedBox(
-            widthFactor: 0.35,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              padding: const EdgeInsets.all(12),
-              child: const Text(
-                'Ja, mach das',
-                style: TextStyle(
-                  color: Color(0xFF232323),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Positioned(
-        bottom: 0,
-        left: 10,
-        child: Visibility(
-          visible: yellowToggledOn,
-          child: GestureDetector(
-            onTap: () {
-              setState(() {
-                _isSecondGreyBubbleVisible = !_isSecondGreyBubbleVisible;
-              });
-            },
-            child: Container(
-              width: 15,
-              height: 15,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-                border: Border.all(
-                  color: const Color(0xFFF8DF07), // Border color F8DF07
-                  width: 2, // Border width
-                ),
-              ),
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFFFBEE7A), // Circle color FBEE7A
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-
-
-GestureDetector(
-  onTap: () {
-    Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => KIBuddyPage(
-      firstMessageClicked: false,
-      secondMessageClicked: true,
-      thirdMessageClicked: false,
-      fourthMessageClicked: false,
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
-  },
-  child: AnimatedOpacity(
-    opacity: _isSecondGreyBubbleVisible ? 1.0 : 0.0,
-    duration: const Duration(milliseconds: 300),
-    child: _isSecondGreyBubbleVisible
-        ? Align(
-            alignment: Alignment.centerRight,
-            child: Stack(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: FractionallySizedBox(
-                      widthFactor: 0.55,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20),
-                            topLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                          ),
-                        ),
-                        padding: const EdgeInsets.all(12),
-                        child: const Text(
-                          'Hmm... sei vorsichtig.',
-                          style: TextStyle(
-                            color: Color(0xFF232323),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    'assets/images/kibuddy-face.png',
-                    width: 40,
-                    height: 40,
-                  ),
-                ),
-              ],
-            ),
-          )
-        : Container(),
-  ),
-),
-
-
-
-
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.8, // Set width factor to 80%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE2FFD4),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
+                          Positioned(
+                            bottom: 0,
+                            left: 10,
+                            child: Visibility(
+                              visible: yellowToggledOn,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isSecondGreyBubbleVisible =
+                                        !_isSecondGreyBubbleVisible;
+                                  });
+                                },
+                                child: Container(
+                                  width: 15,
+                                  height: 15,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        8.5), // Half of the width/height to make it a circle
+                                    border: Border.all(
+                                      color: const Color(
+                                          0xFFF8DF07), // Border color F8DF07
+                                      width: 2, // Border width
+                                    ),
+                                  ),
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Color(
+                                          0xFFFBEE7A), // Circle color FBEE7A
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Hey Schatz, ich gehe heute Abend doch lieber mit meinen Freunden in eine Bar, aber morgen sehen wir uns wider, versprochen 😘',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => KIBuddyPage(
+                              firstMessageClicked: false,
+                              secondMessageClicked: true,
+                              thirdMessageClicked: false,
+                              fourthMessageClicked: false,
+                              greenToggledOn: greenToggledOn,
+                              yellowToggledOn: yellowToggledOn,
+                              redToggledOn: redToggledOn,
+                              purpleToggledOn: purpleToggledOn,
                             ),
                           ),
-                        ),
+                        );
+                      },
+                      child: AnimatedOpacity(
+                        opacity: _isSecondGreyBubbleVisible ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: _isSecondGreyBubbleVisible
+                            ? Align(
+                                alignment: Alignment.centerRight,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 10.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: FractionallySizedBox(
+                                          widthFactor: 0.55,
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFD9D9D9),
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(20),
+                                                topLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                                bottomLeft: Radius.circular(20),
+                                              ),
+                                            ),
+                                            padding: const EdgeInsets.all(12),
+                                            child: const Text(
+                                              'Hmm... sei vorsichtig.',
+                                              style: TextStyle(
+                                                color: Color(0xFF232323),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 0,
+                                      child: Image.asset(
+                                        'assets/images/kibuddy-face.png',
+                                        width: 40,
+                                        height: 40,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
                       ),
                     ),
-                  ),
-                 Align(
-  alignment: Alignment.centerLeft,
-  child: Stack(
-    children: [
-      Container(
-        margin: const EdgeInsets.only(left: 10.0),
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: FractionallySizedBox(
-            widthFactor: 0.5,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              padding: const EdgeInsets.all(12),
-              child: const Text(
-                'Ok, wenn du meinst...',
-                style: TextStyle(
-                  color: Color(0xFF232323),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Positioned(
-        bottom: 0,
-        left: 10,
-        child: Visibility(
-          visible: redToggledOn,
-          child: GestureDetector(
-            onTap: () {
-              setState(() {
-                _isThirdGreyBubbleVisible = !_isThirdGreyBubbleVisible;
-              });
-            },
-            child: Container(
-              width: 15,
-              height: 15,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-                border: Border.all(
-                  color: const Color(0xFFC80404), // Border color C80404
-                  width: 2, // Border width
-                ),
-              ),
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFFFB2F2F), // Circle color FB2F2F
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-
-
-
-GestureDetector(
-  onTap: () {
-    Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => KIBuddyPage(
-      firstMessageClicked: false,
-      secondMessageClicked: false,
-      thirdMessageClicked: true,
-      fourthMessageClicked: false,
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
-  },
-  child: AnimatedOpacity(
-    opacity: _isThirdGreyBubbleVisible ? 1.0 : 0.0,
-    duration: const Duration(milliseconds: 300),
-    child: _isThirdGreyBubbleVisible
-        ? Align(
-            alignment: Alignment.centerRight,
-            child: Stack(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: FractionallySizedBox(
-                      widthFactor: 0.55,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20),
-                            topLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                          ),
-                        ),
-                        padding: const EdgeInsets.all(12),
-                        child: const Text(
-                          'Sie ist sauer auf dich.',
-                          style: TextStyle(
-                            color: Color(0xFF232323),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: FractionallySizedBox(
+                          widthFactor: 0.80,
+                          child: Stack(
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFE2FFD4),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Hey Schatz, ich gehe heute Abend doch lieber mit meinen Freunden in eine Bar, aber morgen sehen wir uns wider, versprochen 😘',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                bottom: 8,
+                                right: 8,
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      '16:57',
+                                      style: TextStyle(
+                                        color: Color(0xFF7f9969),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                        width:
+                                            2), // Adjust the spacing between timestamp and checkmark image
+                                    Image.asset(
+                                      'assets/images/checkmarks.png', // Replace with your actual image path
+                                      height: 16,
+                                      width: 16,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    'assets/images/kibuddy-face.png',
-                    width: 40,
-                    height: 40,
-                  ),
-                ),
-              ],
-            ),
-          )
-        : Container(),
-  ),
-),
-
-
-
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: FractionallySizedBox(
-                        widthFactor: 0.45, // Set width factor to 45%
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE2FFD4),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: FractionallySizedBox(
+                                widthFactor: 0.5,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: const EdgeInsets.all(12),
+                                  child: const Text(
+                                    'Ok, wenn du meinst...',
+                                    style: TextStyle(
+                                      color: Color(0xFF232323),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          padding: const EdgeInsets.all(12),
-                          child: const Text(
-                            'Ist das ok für dich?',
-                            style: TextStyle(
-                              color: Color(0xFF232323),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
+                          Positioned(
+                            bottom: 0,
+                            left: 10,
+                            child: Visibility(
+                              visible: redToggledOn,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isThirdGreyBubbleVisible =
+                                        !_isThirdGreyBubbleVisible;
+                                  });
+                                },
+                                child: Container(
+                                  width: 15,
+                                  height: 15,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        8.5), // Half of the width/height to make it a circle
+                                    border: Border.all(
+                                      color: const Color(
+                                          0xFFC80404), // Border color C80404
+                                      width: 2, // Border width
+                                    ),
+                                  ),
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Color(
+                                          0xFFFB2F2F), // Circle color FB2F2F
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => KIBuddyPage(
+                              firstMessageClicked: false,
+                              secondMessageClicked: false,
+                              thirdMessageClicked: true,
+                              fourthMessageClicked: false,
+                              greenToggledOn: greenToggledOn,
+                              yellowToggledOn: yellowToggledOn,
+                              redToggledOn: redToggledOn,
+                              purpleToggledOn: purpleToggledOn,
+                            ),
+                          ),
+                        );
+                      },
+                      child: AnimatedOpacity(
+                        opacity: _isThirdGreyBubbleVisible ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: _isThirdGreyBubbleVisible
+                            ? Align(
+                                alignment: Alignment.centerRight,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 10.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: FractionallySizedBox(
+                                          widthFactor: 0.55,
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFD9D9D9),
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(20),
+                                                topLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                                bottomLeft: Radius.circular(20),
+                                              ),
+                                            ),
+                                            padding: const EdgeInsets.all(12),
+                                            child: const Text(
+                                              'Sie ist sauer auf dich.',
+                                              style: TextStyle(
+                                                color: Color(0xFF232323),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 0,
+                                      child: Image.asset(
+                                        'assets/images/kibuddy-face.png',
+                                        width: 40,
+                                        height: 40,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: FractionallySizedBox(
+                          widthFactor: 0.5,
+                          child: Stack(
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFE2FFD4),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(12),
+                                child: const Text(
+                                  'Ist das auch wirklich ok für dich?',
+                                  style: TextStyle(
+                                    color: Color(0xFF232323),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                bottom: 8,
+                                right: 8,
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      '16:59',
+                                      style: TextStyle(
+                                        color: Color(0xFF7f9969),
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                        width:
+                                            2), // Adjust the spacing between timestamp and checkmark image
+                                    Image.asset(
+                                      'assets/images/checkmarks.png', // Replace with your actual image path
+                                      height: 16,
+                                      width: 16,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  
-                  Align(
-  alignment: Alignment.centerLeft,
-  child: Stack(
-    children: [
-      Container(
-        margin: const EdgeInsets.only(left: 10.0),
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: FractionallySizedBox(
-            widthFactor: 0.8,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              padding: const EdgeInsets.all(12),
-              child: const Text(
-                'Ja, kein Problem. Viel Spaß euch...',
-                style: TextStyle(
-                  color: Color(0xFF232323),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Positioned(
-        bottom: 0,
-        left: 10,
-        child: Visibility(
-          visible: purpleToggledOn,
-          child: GestureDetector(
-            onTap: () {
-              setState(() {
-                _isFourthGreyBubbleVisible = !_isFourthGreyBubbleVisible;
-              });
-            },
-            child: Container(
-              width: 15,
-              height: 15,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.5), // Half of the width/height to make it a circle
-                border: Border.all(
-                  color: const Color(0xFF991DFB), // Border color 991DFB
-                  width: 2, // Border width
-                ),
-              ),
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFFAD4AFC), // Circle color AD4AFC
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-
-
-GestureDetector(
-  onTap: () {
-   Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => KIBuddyPage(
-      firstMessageClicked: false,
-      secondMessageClicked: false,
-      thirdMessageClicked: false,
-      fourthMessageClicked: true,
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
-  },
-  child: AnimatedOpacity(
-    opacity: _isFourthGreyBubbleVisible ? 1.0 : 0.0,
-    duration: const Duration(milliseconds: 300),
-    child: _isFourthGreyBubbleVisible
-        ? Align(
-            alignment: Alignment.centerRight,
-            child: Stack(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: FractionallySizedBox(
-                      widthFactor: 0.65,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20),
-                            topLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: FractionallySizedBox(
+                                widthFactor: 0.8,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: const EdgeInsets.all(12),
+                                  child: const Text(
+                                    'Ja, kein Problem. Viel Spaß euch...',
+                                    style: TextStyle(
+                                      color: Color(0xFF232323),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        padding: const EdgeInsets.all(12),
-                        child: const Text(
-                          'Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.',
-                          style: TextStyle(
-                            color: Color(0xFF232323),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                          Positioned(
+                            bottom: 0,
+                            left: 10,
+                            child: Visibility(
+                              visible: purpleToggledOn,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _isFourthGreyBubbleVisible =
+                                        !_isFourthGreyBubbleVisible;
+                                  });
+                                },
+                                child: Container(
+                                  width: 15,
+                                  height: 15,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        8.5), // Half of the width/height to make it a circle
+                                    border: Border.all(
+                                      color: const Color(
+                                          0xFF991DFB), // Border color 991DFB
+                                      width: 2, // Border width
+                                    ),
+                                  ),
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Color(
+                                          0xFFAD4AFC), // Circle color AD4AFC
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
-                  ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => KIBuddyPage(
+                              firstMessageClicked: false,
+                              secondMessageClicked: false,
+                              thirdMessageClicked: false,
+                              fourthMessageClicked: true,
+                              greenToggledOn: greenToggledOn,
+                              yellowToggledOn: yellowToggledOn,
+                              redToggledOn: redToggledOn,
+                              purpleToggledOn: purpleToggledOn,
+                            ),
+                          ),
+                        );
+                      },
+                      child: AnimatedOpacity(
+                        opacity: _isFourthGreyBubbleVisible ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: _isFourthGreyBubbleVisible
+                            ? Align(
+                                alignment: Alignment.centerRight,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 10.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: FractionallySizedBox(
+                                          widthFactor: 0.65,
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color(0xFFD9D9D9),
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(20),
+                                                topLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                                bottomLeft: Radius.circular(20),
+                                              ),
+                                            ),
+                                            padding: const EdgeInsets.all(12),
+                                            child: const Text(
+                                              'Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.',
+                                              style: TextStyle(
+                                                color: Color(0xFF232323),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 0,
+                                      child: Image.asset(
+                                        'assets/images/kibuddy-face.png',
+                                        width: 40,
+                                        height: 40,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                      ),
+                    ),
+                  ],
                 ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    'assets/images/kibuddy-face.png',
-                    width: 40,
-                    height: 40,
-                  ),
-                ),
-              ],
-            ),
-          )
-        : Container(),
-  ),
-),
-
-
-                ],
               ),
-            ),
             )
           ],
         ),
       ),
-    
       bottomNavigationBar: BottomAppBar(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -849,7 +960,9 @@ GestureDetector(
                 onPressed: () {
                   // Add functionality for the plus icon
                 },
-                padding: const EdgeInsets.only(left: 0, right: 0), // Add padding to move the icon to the left
+                padding: const EdgeInsets.only(
+                    left: 0,
+                    right: 0), // Add padding to move the icon to the left
               ),
               Expanded(
                 child: Padding(
@@ -866,7 +979,8 @@ GestureDetector(
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: '',
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 10),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
                           ),
