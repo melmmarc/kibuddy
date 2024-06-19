@@ -213,7 +213,7 @@ class _ChatPageState extends State<ChatPage> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: FractionallySizedBox(
-                                widthFactor: 0.55,
+                                widthFactor: 0.64,
                                 child: Container(
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -237,6 +237,17 @@ class _ChatPageState extends State<ChatPage> {
                               ),
                             ),
                           ),
+                          const Positioned(
+                            bottom: 8,
+                            right: 16,
+                            child: Text(
+                              '15:49',
+                              style: TextStyle(
+                                color: Color(0xFF7f9969),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
                           Positioned(
                             bottom: 0,
                             left: 10,
@@ -252,23 +263,21 @@ class _ChatPageState extends State<ChatPage> {
                                       width: 15,
                                       height: 15,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                            8.5), // Half of the width/height to make it a circle
+                                        borderRadius:
+                                            BorderRadius.circular(8.5),
                                         border: Border.all(
-                                          color: const Color(
-                                              0xFF00CC08), // Border color 00CC08
-                                          width: 2, // Border width
+                                          color: const Color(0xFF00CC08),
+                                          width: 2,
                                         ),
                                       ),
                                       child: Container(
                                         decoration: const BoxDecoration(
-                                          color: Color(
-                                              0xFF00E809), // Change the color to 00E809
+                                          color: Color(0xFF00E809),
                                           shape: BoxShape.circle,
                                         ),
                                       ),
                                     )
-                                  : const SizedBox(), // if greenToggledOn is false, render an empty SizedBox
+                                  : const SizedBox(), // Render an empty SizedBox if greenToggledOn is false
                             ),
                           ),
                         ],
@@ -308,7 +317,7 @@ class _ChatPageState extends State<ChatPage> {
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                              0.5, // Set the width
+                                              0.5,
                                           child: Container(
                                             decoration: const BoxDecoration(
                                               color: Color(0xFFD9D9D9),
@@ -413,7 +422,7 @@ class _ChatPageState extends State<ChatPage> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: FractionallySizedBox(
-                                widthFactor: 0.35,
+                                widthFactor: 0.45,
                                 child: Container(
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -434,6 +443,17 @@ class _ChatPageState extends State<ChatPage> {
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                          ),
+                          const Positioned(
+                            bottom: 8,
+                            right: 16,
+                            child: Text(
+                              '15:53',
+                              style: TextStyle(
+                                color: Color(0xFF7f9969),
+                                fontSize: 12,
                               ),
                             ),
                           ),
@@ -611,7 +631,7 @@ class _ChatPageState extends State<ChatPage> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: FractionallySizedBox(
-                                widthFactor: 0.5,
+                                widthFactor: 0.62,
                                 child: Container(
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -632,6 +652,17 @@ class _ChatPageState extends State<ChatPage> {
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                          ),
+                          const Positioned(
+                            bottom: 8,
+                            right: 16,
+                            child: Text(
+                              '16:58',
+                              style: TextStyle(
+                                color: Color(0xFF7f9969),
+                                fontSize: 12,
                               ),
                             ),
                           ),
@@ -809,7 +840,7 @@ class _ChatPageState extends State<ChatPage> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: FractionallySizedBox(
-                                widthFactor: 0.8,
+                                widthFactor: 0.88,
                                 child: Container(
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -830,6 +861,17 @@ class _ChatPageState extends State<ChatPage> {
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                          ),
+                          const Positioned(
+                            bottom: 8,
+                            right: 16,
+                            child: Text(
+                              '17:04',
+                              style: TextStyle(
+                                color: Color(0xFF7f9969),
+                                fontSize: 12,
                               ),
                             ),
                           ),
