@@ -87,7 +87,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 25, top: 10),
+                                      padding: const EdgeInsets.only(
+                                          left: 25, top: 10),
                                       child: Image.asset(
                                         'assets/images/kibuddy-circled.png',
                                         width: 50,
@@ -95,13 +96,17 @@ class _SettingsPageState extends State<SettingsPage> {
                                       ),
                                     ),
                                     const Padding(
-                                      padding: EdgeInsets.only(left: 20, top: 20),
+                                      padding:
+                                          EdgeInsets.only(left: 20, top: 20),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'KI-Buddy',
-                                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500),
                                           ),
                                         ],
                                       ),
@@ -114,7 +119,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                     padding: EdgeInsets.only(left: 22, top: 5),
                                     child: Text(
                                       'Bearbeiten',
-                                      style: TextStyle(fontSize: 10, color: Color(0xFF3297B7), fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          color: Color(0xFF3297B7),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                 ),
@@ -142,12 +150,18 @@ class _SettingsPageState extends State<SettingsPage> {
                                     SizedBox(width: 15),
                                     Text(
                                       'Sprache',
-                                      style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF232323),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                     Spacer(),
                                     Text(
                                       'Deutsch',
-                                      style: TextStyle(fontSize: 16, color: Color(0xFFC8C7CC), fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFFC8C7CC),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(width: 10),
                                     Padding(
@@ -164,24 +178,35 @@ class _SettingsPageState extends State<SettingsPage> {
                                   ? Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 30),
+                                          padding:
+                                              const EdgeInsets.only(left: 30),
                                           child: Container(
                                             width: 16,
                                             height: 16,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
-                                              color: Color(0xFF00E809),
+                                              color: const Color(
+                                                  0xFF00E809), // Green color
+                                              border: Border.all(
+                                                color: const Color(0xFF00CC08),
+                                                width:
+                                                    2.0, // 2px width for the outline
+                                              ),
                                             ),
                                           ),
                                         ),
                                         const SizedBox(width: 22),
                                         const Text(
                                           'Positiv',
-                                          style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xFF232323),
+                                              fontWeight: FontWeight.w500),
                                         ),
                                         const Spacer(),
                                         Padding(
-                                          padding: const EdgeInsets.only(right: 10),
+                                          padding:
+                                              const EdgeInsets.only(right: 10),
                                           child: Transform.scale(
                                             scale: 0.8,
                                             child: CupertinoSwitch(
@@ -191,7 +216,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                                   widget.greenToggledOn = value;
                                                 });
                                               },
-                                              activeColor: const Color(0xFF6edc5f),
+                                              activeColor:
+                                                  const Color(0xFF6edc5f),
                                             ),
                                           ),
                                         ),
@@ -201,34 +227,48 @@ class _SettingsPageState extends State<SettingsPage> {
                                       ? Row(
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.only(left: 30),
+                                              padding: const EdgeInsets.only(
+                                                  left: 30),
                                               child: Container(
                                                 width: 16,
                                                 height: 16,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   shape: BoxShape.circle,
-                                                  color: Color(0xFFFBEE7A), // Yellow color
+                                                  color:
+                                                      const Color(0xFFFBEE7A),
+                                                  border: Border.all(
+                                                    color:
+                                                        const Color(0xFFF8DF07),
+                                                    width:
+                                                        2.0, // 2px width for the outline
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                             const SizedBox(width: 22),
                                             const Text(
                                               'Ungewiss', // Changed text to "Ungewiss"
-                                              style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Color(0xFF232323),
+                                                  fontWeight: FontWeight.w500),
                                             ),
                                             const Spacer(),
                                             Padding(
-                                              padding: const EdgeInsets.only(right: 10),
+                                              padding: const EdgeInsets.only(
+                                                  right: 10),
                                               child: Transform.scale(
                                                 scale: 0.8,
                                                 child: CupertinoSwitch(
                                                   value: widget.yellowToggledOn,
                                                   onChanged: (value) {
-                                                   setState(() {
-                                                      widget.yellowToggledOn = value;
-                                                });
+                                                    setState(() {
+                                                      widget.yellowToggledOn =
+                                                          value;
+                                                    });
                                                   },
-                                                  activeColor: const Color(0xFF6edc5f),
+                                                  activeColor:
+                                                      const Color(0xFF6edc5f),
                                                 ),
                                               ),
                                             ),
@@ -238,34 +278,52 @@ class _SettingsPageState extends State<SettingsPage> {
                                           ? Row(
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(left: 30),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 30),
                                                   child: Container(
                                                     width: 16,
                                                     height: 16,
-                                                    decoration: const BoxDecoration(
+                                                    decoration: BoxDecoration(
                                                       shape: BoxShape.circle,
-                                                      color: Color(0xFFFB2F2F), // Red color
+                                                      color: const Color(
+                                                          0xFFFB2F2F),
+                                                      border: Border.all(
+                                                        color: const Color(
+                                                            0xFFC80404),
+                                                        width:
+                                                            2.0, // 2px width for the outline
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                                 const SizedBox(width: 22),
-                                                                                               const Text(
+                                                const Text(
                                                   'Negativ', // Changed text to "Negativ"
-                                                  style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      color: Color(0xFF232323),
+                                                      fontWeight:
+                                                          FontWeight.w500),
                                                 ),
                                                 const Spacer(),
                                                 Padding(
-                                                  padding: const EdgeInsets.only(right: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10),
                                                   child: Transform.scale(
                                                     scale: 0.8,
                                                     child: CupertinoSwitch(
-                                                      value: widget.redToggledOn,
+                                                      value:
+                                                          widget.redToggledOn,
                                                       onChanged: (value) {
                                                         setState(() {
-                                                  widget.redToggledOn = value;
-                                                });
+                                                          widget.redToggledOn =
+                                                              value;
+                                                        });
                                                       },
-                                                      activeColor: const Color(0xFF6edc5f),
+                                                      activeColor: const Color(
+                                                          0xFF6edc5f),
                                                     ),
                                                   ),
                                                 ),
@@ -275,34 +333,56 @@ class _SettingsPageState extends State<SettingsPage> {
                                               ? Row(
                                                   children: [
                                                     Padding(
-                                                      padding: const EdgeInsets.only(left: 30),
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 30),
                                                       child: Container(
                                                         width: 16,
                                                         height: 16,
-                                                        decoration: const BoxDecoration(
-                                                          shape: BoxShape.circle,
-                                                          color: Color(0xFFAD4AFC), // Purple color
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          color: const Color(
+                                                              0xFFAD4AFC),
+                                                          border: Border.all(
+                                                            color: const Color(
+                                                                0xFF991DFB),
+                                                            width:
+                                                                2.0, // 2px width for the outline
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     const SizedBox(width: 22),
                                                     const Text(
                                                       'Sarkasmus', // Text changed to "Sarkasmus"
-                                                      style: TextStyle(fontSize: 16, color: Color(0xFF232323), fontWeight: FontWeight.w500),
+                                                      style: TextStyle(
+                                                          fontSize: 16,
+                                                          color:
+                                                              Color(0xFF232323),
+                                                          fontWeight:
+                                                              FontWeight.w500),
                                                     ),
                                                     const Spacer(),
                                                     Padding(
-                                                      padding: const EdgeInsets.only(right: 10),
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 10),
                                                       child: Transform.scale(
                                                         scale: 0.8,
                                                         child: CupertinoSwitch(
-                                                          value: widget.purpleToggledOn,
+                                                          value: widget
+                                                              .purpleToggledOn,
                                                           onChanged: (value) {
                                                             setState(() {
-                                                  widget.purpleToggledOn = value;
-                                                });
+                                                              widget.purpleToggledOn =
+                                                                  value;
+                                                            });
                                                           },
-                                                          activeColor: const Color(0xFF6edc5f),
+                                                          activeColor:
+                                                              const Color(
+                                                                  0xFF6edc5f),
                                                         ),
                                                       ),
                                                     ),
@@ -311,7 +391,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                               : Center(
                                                   child: Text(
                                                     'Box ${index + 1}',
-                                                    style: const TextStyle(fontSize: 18),
+                                                    style: const TextStyle(
+                                                        fontSize: 18),
                                                   ),
                                                 ),
                         );
@@ -324,4 +405,3 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
-
