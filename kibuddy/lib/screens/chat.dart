@@ -75,11 +75,20 @@ class _ChatPageState extends State<ChatPage> {
               ),
               title: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.grey[300],
-                    backgroundImage:
-                        const AssetImage('assets/images/megan-fox.webp'),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 148, 148, 148),
+                        width: 1.0,
+                      ),
+                    ),
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.grey[300],
+                      backgroundImage:
+                          const AssetImage('assets/images/megan-fox.webp'),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   const Text(

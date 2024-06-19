@@ -33,7 +33,8 @@ class HomePage extends StatelessWidget {
   final bool redToggledOn;
   final bool purpleToggledOn;
 
-  const HomePage({super.key, 
+  const HomePage({
+    super.key,
     Key? key5,
     required this.greenToggledOn,
     required this.yellowToggledOn,
@@ -42,7 +43,8 @@ class HomePage extends StatelessWidget {
   });
 
   Future<Uint8List> loadBackgroundImage() async {
-    final ByteData data = await rootBundle.load('assets/images/whatsapp-bg-50.png');
+    final ByteData data =
+        await rootBundle.load('assets/images/whatsapp-bg-50.png');
     return data.buffer.asUint8List();
   }
 
@@ -111,15 +113,18 @@ class HomePage extends StatelessWidget {
               Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0, vertical: 20.0),
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Suchen',
                         prefixIcon: const Icon(Icons.search),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0), // Border radius of 20px
+                          borderRadius: BorderRadius.circular(
+                              20.0), // Border radius of 20px
                         ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 12.0), // Half the original height
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 12.0), // Half the original height
                       ),
                       onChanged: (value) {
                         // Implement search functionality here
@@ -127,178 +132,260 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChatPage(
-                            greenToggledOn: greenToggledOn,
-                            yellowToggledOn: yellowToggledOn,
-                            redToggledOn: redToggledOn,
-                            purpleToggledOn: purpleToggledOn,
-                            firstMessageClicked: false,
-                            secondMessageClicked: false,
-                            thirdMessageClicked: false,
-                            fourthMessageClicked: false,
-                          ),
-                        ), // Navigate to chat.dart
-                      );
-                    },
-                    child: const Material(
-                      color: Colors.white,
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/megan-fox.webp'),
-                        ),
-                        title: Text(
-                          'Megan', // Replace with appropriate text
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        subtitle: Text('Ja, kein Problem. Viel Spaß euch...'), // Replace with appropriate text
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2), // Add some space between boxes
-                  GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the second box
-                    },
-                    child: const Material(
-                      color: Colors.white,
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/jenniferlawrence.jpeg'),
-                        ),
-                        title: Text(
-                          'Jennifer', // Replace with appropriate text
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        subtitle: Text('Ok'), // Replace with appropriate text
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2), // Add some space between boxes
-                  GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the third box
-                    },
-                    child: Container(
-                      height: 70,
-                      color: Colors.white,
-                      child: const Material(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatPage(
+                              greenToggledOn: greenToggledOn,
+                              yellowToggledOn: yellowToggledOn,
+                              redToggledOn: redToggledOn,
+                              purpleToggledOn: purpleToggledOn,
+                              firstMessageClicked: false,
+                              secondMessageClicked: false,
+                              thirdMessageClicked: false,
+                              fourthMessageClicked: false,
+                            ),
+                          ), // Navigate to chat.dart
+                        );
+                      },
+                      child: Material(
+                        color: Colors.white,
                         child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: AssetImage('assets/images/benaffleck.jpeg'),
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage:
+                                  AssetImage('assets/images/megan-fox.webp'),
+                            ),
                           ),
-                          title: Text(
-                            'Ben',
+                          title: const Text(
+                            'Megan', // Replace with appropriate text
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text('Ja, sehe ich genau so.'), // Add appropriate subtitle here
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2), // Add some space between boxes
-                  GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the fourth box
-                    },
-                    child: const Material(
-                      color: Colors.white,
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/taylorswift.png'),
-                        ),
-                        title: Text(
-                          'Taylor',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          subtitle: const Text(
+                            'Ja, kein Problem. Viel Spaß euch...', // Replace with appropriate text
                           ),
                         ),
-                        subtitle: Text('Denk an den Termin morgen.'), // Add appropriate subtitle here
-                      ),
-                    ),
-                  ),
+                      )),
                   const SizedBox(height: 2), // Add some space between boxes
                   GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the third box
-                    },
-                    child: Container(
-                      height: 70,
-                      color: Colors.white,
-                      child: const Material(
+                      onTap: () {
+                        // Add onTap functionality for the second box
+                      },
+                      child: Material(
+                        color: Colors.white,
                         child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: AssetImage('assets/images/markwahlberg.jpg'),
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage: AssetImage(
+                                  'assets/images/jenniferlawrence.jpeg'),
+                            ),
                           ),
-                          title: Text(
-                            'Mark',
+                          title: const Text(
+                            'Jennifer', // Replace with appropriate text
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text('Bis morgen.'), // Add appropriate subtitle here
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2), // Add some space between boxes
-                  GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the fourth box
-                    },
-                    child: const Material(
-                      color: Colors.white,
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/helenefischer.jpeg'),
-                        ),
-                        title: Text(
-                          'Helene',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          subtitle: const Text(
+                            'Ok', // Replace with appropriate text
                           ),
                         ),
-                        subtitle: Text('Bist du morgen dabei?'), // Add appropriate subtitle here
-                      ),
-                    ),
-                  ),
+                      )),
                   const SizedBox(height: 2), // Add some space between boxes
                   GestureDetector(
-                    onTap: () {
-                      // Add onTap functionality for the fourth box
-                    },
-                    child: const Material(
-                      color: Colors.white,
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/morganfreeman.avif'),
-                        ),
-                        title: Text(
-                          'Morgan',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                      onTap: () {
+                        // Add onTap functionality for the third box
+                      },
+                      child: Material(
+                        color: Colors.white,
+                        child: ListTile(
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage:
+                                  AssetImage('assets/images/benaffleck.jpeg'),
+                            ),
+                          ),
+                          title: const Text(
+                            'Ben', // Replace with appropriate text
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: const Text(
+                            'Ja, sehe ich genau so.', // Replace with appropriate text
                           ),
                         ),
-                        subtitle: Text('Sonntag steht noch?'), // Add appropriate subtitle here
-                      ),
-                    ),
-                  ),
+                      )),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                      onTap: () {
+                        // Add onTap functionality for the fourth box
+                      },
+                      child: Material(
+                        color: Colors.white,
+                        child: ListTile(
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage:
+                                  AssetImage('assets/images/taylorswift.png'),
+                            ),
+                          ),
+                          title: const Text(
+                            'Taylor', // Replace with appropriate text
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: const Text(
+                            'Denk an den Termin morgen.', // Replace with appropriate text
+                          ),
+                        ),
+                      )),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                      onTap: () {
+                        // Add onTap functionality for the third box
+                      },
+                      child: Material(
+                        color: Colors.white,
+                        child: ListTile(
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage:
+                                  AssetImage('assets/images/markwahlberg.jpg'),
+                            ),
+                          ),
+                          title: const Text(
+                            'Mark', // Replace with appropriate text
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: const Text(
+                            'Bis morgen.', // Replace with appropriate text
+                          ),
+                        ),
+                      )),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                      onTap: () {
+                        // Add onTap functionality for the fourth box
+                      },
+                      child: Material(
+                        color: Colors.white,
+                        child: ListTile(
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage: AssetImage(
+                                  'assets/images/helenefischer.jpeg'),
+                            ),
+                          ),
+                          title: const Text(
+                            'Helene', // Replace with appropriate text
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: const Text(
+                            'Bist du morgen dabei?', // Replace with appropriate text
+                          ),
+                        ),
+                      )),
+                  const SizedBox(height: 2), // Add some space between boxes
+                  GestureDetector(
+                      onTap: () {
+                        // Add onTap functionality for the fourth box
+                      },
+                      child: Material(
+                        color: Colors.white,
+                        child: ListTile(
+                          leading: Container(
+                            width: 48, // Adjust the size as needed
+                            height: 48, // Adjust the size as needed
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: const Color.fromARGB(255, 148, 148, 148),
+                                width: 1.0, // Border width
+                              ),
+                            ),
+                            child: const CircleAvatar(
+                              backgroundImage: AssetImage(
+                                  'assets/images/morganfreeman.avif'),
+                            ),
+                          ),
+                          title: const Text(
+                            'Morgan', // Replace with appropriate text
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: const Text(
+                            'Sonntag steht noch?', // Replace with appropriate text
+                          ),
+                        ),
+                      )),
                 ],
               ),
             ],
-            
           ),
-          
-          
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedItemColor: const Color(0xFF3297B7),
@@ -310,35 +397,32 @@ class HomePage extends StatelessWidget {
                   width: 26,
                   height: 26,
                 ),
-                label:
-                              'Aktuelles',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.phone),
-              label: 'Anrufe',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.people_alt_outlined),
-              label: 'Communitys',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/images/chatbubble.png',
-                width: 24,
-                height: 24,
+                label: 'Aktuelles',
               ),
-              label: 'Chats',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Einstellungen',
-            ),
-          ],
-        ),
-      );
-    },
-    
-  );
+              const BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.phone),
+                label: 'Anrufe',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.people_alt_outlined),
+                label: 'Communitys',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/chatbubble.png',
+                  width: 24,
+                  height: 24,
+                ),
+                label: 'Chats',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Einstellungen',
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
-}
-
