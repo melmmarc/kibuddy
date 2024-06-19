@@ -26,17 +26,21 @@ class ChatBubble extends StatelessWidget {
         children: [
           Container(
             width: bubbleWidth,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.0),
-                topRight: Radius.circular(20.0),
-                bottomLeft: Radius.circular(20.0),
-                bottomRight: Radius.circular(20.0),
-              ),
+              borderRadius: BorderRadius.circular(20.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
             padding: const EdgeInsets.all(12.0),
             child: Stack(
+              clipBehavior: Clip.none,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,8 +56,8 @@ class ChatBubble extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  bottom: 0,
-                  right: 0,
+                  bottom: -8.0, // Adjust as needed to position the timestamp
+                  right: 0.0,
                   child: Text(
                     timestamp,
                     style: const TextStyle(
