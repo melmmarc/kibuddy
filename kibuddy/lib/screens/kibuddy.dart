@@ -158,8 +158,12 @@ class KIBuddyPage extends StatelessWidget {
                 ),
                 actions: [
                   IconButton(
-                    icon: const Icon(Icons.settings),
-                    iconSize: 28,
+                    icon: Image.asset(
+                      'assets/images/settings-icon.png',
+                      width: 24,
+                      height: 24,
+                      color: const Color(0xFF3297B7),
+                    ),
                     color: const Color(0xFF3297B7),
                     onPressed: () {
                       Navigator.push(

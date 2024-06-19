@@ -410,16 +410,30 @@ class HomePage extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Image.asset(
                   'assets/images/chatbubble.png',
-                  width: 20,
-                  height: 20,
+                  width: 22,
+                  height: 22,
                 ),
                 label: 'Chats',
               ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+              BottomNavigationBarItem(
+                icon: ColorFiltered(
+                  colorFilter: const ColorFilter.mode(
+                    Color(0xFF3297B7),
+                    BlendMode.srcIn,
+                  ),
+                  child: Image.asset(
+                    'assets/images/settings-icon.png',
+                    width: 24,
+                    height: 24,
+                  ),
+                ),
                 label: 'Einstellungen',
               ),
             ],
+            // Customization for the label text style
+            // You can adjust fontSize and other properties as needed
+            selectedLabelStyle: const TextStyle(fontSize: 11),
+            unselectedLabelStyle: const TextStyle(fontSize: 11),
           ),
         );
       },
