@@ -103,13 +103,23 @@ class _ChatPageState extends State<ChatPage> {
               ),
               titleSpacing: -5.0,
               actions: [
-                IconButton(
-                  icon: const Icon(CupertinoIcons.video_camera),
-                  color: const Color(0xFF3297B7),
-                  iconSize: 36,
-                  onPressed: () {
-                    // Add functionality for video icon
-                  },
+                GestureDetector(
+                  onTap: () {},
+                  child: ColorFiltered(
+                    colorFilter: const ColorFilter.mode(
+                      Color(0xFF3297B7), // Filter color
+                      BlendMode.srcIn, // Blend mode
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          right: 8.0), // 10px right margin
+                      child: Image.asset(
+                        'assets/images/test-camera.webp',
+                        width: 36,
+                        height: 36,
+                      ),
+                    ),
+                  ),
                 ),
                 IconButton(
                   icon: const Icon(CupertinoIcons.phone),
@@ -789,7 +799,7 @@ class _ChatPageState extends State<ChatPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: FractionallySizedBox(
-                          widthFactor: 0.5,
+                          widthFactor: 0.55,
                           child: Stack(
                             children: [
                               Container(

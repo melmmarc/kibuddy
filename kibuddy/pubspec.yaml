@@ -55,6 +55,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/megan-fox.webp
+    - assets/images/test-camera.webp
     - assets/images/robot.png
     - assets/images/whatsapp-bg.jpeg
     - assets/images/whatsapp-bg.png

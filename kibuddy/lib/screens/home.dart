@@ -410,8 +410,8 @@ class HomePage extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Image.asset(
                   'assets/images/chatbubble.png',
-                  width: 24,
-                  height: 24,
+                  width: 20,
+                  height: 20,
                 ),
                 label: 'Chats',
               ),
