@@ -2,42 +2,67 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'chat.dart';
 import 'settings.dart';
+import 'package:intl/intl.dart';
 
 class ChatBubble extends StatelessWidget {
   final String message;
 
-  const ChatBubble({super.key, Key? key2, required this.message});
+  const ChatBubble({
+    super.key,
+    required this.message,
+  });
 
   @override
   Widget build(BuildContext context) {
-    // Calculate the width based on 80% of the screen width
     final double screenWidth = MediaQuery.of(context).size.width;
     final double bubbleWidth = screenWidth * 0.8;
 
+    String timestamp = DateFormat.Hm().format(DateTime.now());
+
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            width: bubbleWidth, // Set the width of the container
+            width: bubbleWidth,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20.0),
                 topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(20.0),
                 bottomLeft: Radius.circular(20.0),
                 bottomRight: Radius.circular(20.0),
               ),
             ),
             padding: const EdgeInsets.all(12.0),
-            child: Text(
-              message,
-              style: const TextStyle(
-                fontSize: 15.0,
-                color: Color(0xFF232323),
-                fontWeight: FontWeight.w500,
-              ),
+            child: Stack(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      message,
+                      style: const TextStyle(
+                        fontSize: 15.0,
+                        color: Color(0xFF232323),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Text(
+                    timestamp,
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Color(0xFF7f9969),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -45,7 +70,6 @@ class ChatBubble extends StatelessWidget {
     );
   }
 }
-
 
 class KIBuddyPage extends StatelessWidget {
   final bool firstMessageClicked;
@@ -64,7 +88,6 @@ class KIBuddyPage extends StatelessWidget {
     required this.secondMessageClicked,
     required this.thirdMessageClicked,
     required this.fourthMessageClicked,
-
     required this.greenToggledOn,
     required this.yellowToggledOn,
     required this.redToggledOn,
@@ -75,15 +98,20 @@ class KIBuddyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     String message;
     if (firstMessageClicked) {
-      message = "Megan scheint sich auch auf dich zu freuen, kein Grund zur Sorge.";
+      message =
+          "Megan scheint sich auch auf dich zu freuen, kein Grund zur Sorge.";
     } else if (secondMessageClicked) {
-      message = "Ich bin mir auch nicht ganz sicher wie ich diese Antwort deuten soll. Sei lieber etwas vorsichtig.";
+      message =
+          "Ich bin mir auch nicht ganz sicher wie ich diese Antwort deuten soll. Sei lieber etwas vorsichtig.";
     } else if (thirdMessageClicked) {
-      message = "Megan scheint sauer auf dich zu sein, da sie sich auf dich gefreut hat und du kurzfristig abgesagt hast.";
+      message =
+          "Megan scheint sauer auf dich zu sein, da sie sich auf dich gefreut hat und du kurzfristig abgesagt hast.";
     } else if (fourthMessageClicked) {
-      message = "Sarkasmus! Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.";
+      message =
+          "Sarkasmus! Es ist ein Problem für sie und sie wünscht euch nicht viel Spaß, sondern ist sauer.";
     } else {
-      message = "Wie kann ich dir heute behilflich sein?"; // Default message if none of the buttons are clicked
+      message =
+          "Wie kann ich dir behilflich sein?"; // Default message if none of the buttons are clicked
     }
 
     return Scaffold(
@@ -107,20 +135,20 @@ class KIBuddyPage extends StatelessWidget {
                   color: const Color(0xFF3297B7),
                   onPressed: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChatPage(
-                        firstMessageClicked: false,
-                        secondMessageClicked: false,
-                        thirdMessageClicked: false,
-                        fourthMessageClicked: false,
-                        greenToggledOn: greenToggledOn,
-                        yellowToggledOn: yellowToggledOn,
-                        redToggledOn: redToggledOn,
-                        purpleToggledOn: purpleToggledOn,
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ChatPage(
+                          firstMessageClicked: false,
+                          secondMessageClicked: false,
+                          thirdMessageClicked: false,
+                          fourthMessageClicked: false,
+                          greenToggledOn: greenToggledOn,
+                          yellowToggledOn: yellowToggledOn,
+                          redToggledOn: redToggledOn,
+                          purpleToggledOn: purpleToggledOn,
+                        ),
                       ),
-                    ),
-                  );
+                    );
                   },
                 ),
                 automaticallyImplyLeading: false,
@@ -139,16 +167,16 @@ class KIBuddyPage extends StatelessWidget {
                     color: const Color(0xFF3297B7),
                     onPressed: () {
                       Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => SettingsPage(
-      greenToggledOn: greenToggledOn,
-      yellowToggledOn: yellowToggledOn,
-      redToggledOn: redToggledOn,
-      purpleToggledOn: purpleToggledOn,
-    ),
-  ),
-);
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SettingsPage(
+                            greenToggledOn: greenToggledOn,
+                            yellowToggledOn: yellowToggledOn,
+                            redToggledOn: redToggledOn,
+                            purpleToggledOn: purpleToggledOn,
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -180,14 +208,13 @@ class KIBuddyPage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  // Your chat content goes here
-                ),
+                    // Your chat content goes here
+                    ),
               ),
             ],
           ),
         ],
       ),
-      
       bottomNavigationBar: BottomAppBar(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -215,7 +242,8 @@ class KIBuddyPage extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: '',
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 10),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
                           ),
