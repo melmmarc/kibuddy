@@ -182,14 +182,26 @@ class _ChatPageState extends State<ChatPage> {
                           child: Stack(
                             children: [
                               Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFE2FFD4),
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFE2FFD4),
+                                  borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(20),
                                     topRight: Radius.circular(20),
                                     bottomLeft: Radius.circular(20),
                                     bottomRight: Radius.circular(20),
                                   ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color.fromARGB(
+                                              255, 156, 169, 178)
+                                          .withOpacity(0.2), // Outer
+                                      spreadRadius:
+                                          1, // Spread radius for the outer shadow
+                                      blurRadius: 1, // Blur radius
+                                      offset: const Offset(0,
+                                          1), // Offset to make the shadow visible
+                                    ),
+                                  ],
                                 ),
                                 padding: const EdgeInsets.all(12),
                                 child: const Text(
@@ -240,14 +252,26 @@ class _ChatPageState extends State<ChatPage> {
                               child: FractionallySizedBox(
                                 widthFactor: 0.64,
                                 child: Container(
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(20),
                                       topRight: Radius.circular(20),
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20),
                                     ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color.fromARGB(
+                                                255, 156, 169, 178)
+                                            .withOpacity(0.2), // Outer
+                                        spreadRadius:
+                                            1, // Spread radius for the outer shadow
+                                        blurRadius: 1, // Blur radius
+                                        offset: const Offset(0,
+                                            1), // Offset to make the shadow visible
+                                      ),
+                                    ],
                                   ),
                                   padding: const EdgeInsets.all(12),
                                   child: const Text(
@@ -344,15 +368,29 @@ class _ChatPageState extends State<ChatPage> {
                                                   .width *
                                               0.5,
                                           child: Container(
-                                            decoration: const BoxDecoration(
-                                              color: Color(0xFFD9D9D9),
-                                              borderRadius: BorderRadius.only(
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFD9D9D9),
+                                              borderRadius:
+                                                  const BorderRadius.only(
                                                 topRight: Radius.circular(20),
                                                 topLeft: Radius.circular(20),
                                                 bottomRight:
                                                     Radius.circular(20),
                                                 bottomLeft: Radius.circular(20),
                                               ),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                          255, 74, 80, 85)
+                                                      .withOpacity(
+                                                          0.2), // Outer
+                                                  spreadRadius:
+                                                      1, // Spread radius for the outer shadow
+                                                  blurRadius: 1, // Blur radius
+                                                  offset: const Offset(0,
+                                                      1), // Offset to make the shadow visible
+                                                ),
+                                              ],
                                             ),
                                             padding: const EdgeInsets.all(12),
                                             child: const Text(
@@ -391,14 +429,26 @@ class _ChatPageState extends State<ChatPage> {
                           child: Stack(
                             children: [
                               Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFE2FFD4),
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFE2FFD4),
+                                  borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(20),
                                     topRight: Radius.circular(20),
                                     bottomLeft: Radius.circular(20),
                                     bottomRight: Radius.circular(20),
                                   ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color.fromARGB(
+                                              255, 156, 169, 178)
+                                          .withOpacity(0.2), // Outer
+                                      spreadRadius:
+                                          1, // Spread radius for the outer shadow
+                                      blurRadius: 1, // Blur radius
+                                      offset: const Offset(0,
+                                          1), // Offset to make the shadow visible
+                                    ),
+                                  ],
                                 ),
                                 padding: const EdgeInsets.all(12),
                                 child: const Text(
@@ -449,14 +499,26 @@ class _ChatPageState extends State<ChatPage> {
                               child: FractionallySizedBox(
                                 widthFactor: 0.45,
                                 child: Container(
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(20),
                                       topRight: Radius.circular(20),
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20),
                                     ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color.fromARGB(
+                                                255, 156, 169, 178)
+                                            .withOpacity(0.2), // Outer
+                                        spreadRadius:
+                                            1, // Spread radius for the outer shadow
+                                        blurRadius: 1, // Blur radius
+                                        offset: const Offset(0,
+                                            1), // Offset to make the shadow visible
+                                      ),
+                                    ],
                                   ),
                                   padding: const EdgeInsets.all(12),
                                   child: const Text(
@@ -553,15 +615,29 @@ class _ChatPageState extends State<ChatPage> {
                                         child: FractionallySizedBox(
                                           widthFactor: 0.55,
                                           child: Container(
-                                            decoration: const BoxDecoration(
-                                              color: Color(0xFFD9D9D9),
-                                              borderRadius: BorderRadius.only(
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFD9D9D9),
+                                              borderRadius:
+                                                  const BorderRadius.only(
                                                 topRight: Radius.circular(20),
                                                 topLeft: Radius.circular(20),
                                                 bottomRight:
                                                     Radius.circular(20),
                                                 bottomLeft: Radius.circular(20),
                                               ),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                          255, 74, 80, 85)
+                                                      .withOpacity(
+                                                          0.2), // Outer
+                                                  spreadRadius:
+                                                      1, // Spread radius for the outer shadow
+                                                  blurRadius: 1, // Blur radius
+                                                  offset: const Offset(0,
+                                                      1), // Offset to make the shadow visible
+                                                ),
+                                              ],
                                             ),
                                             padding: const EdgeInsets.all(12),
                                             child: const Text(
@@ -600,14 +676,26 @@ class _ChatPageState extends State<ChatPage> {
                           child: Stack(
                             children: [
                               Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFE2FFD4),
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFE2FFD4),
+                                  borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(20),
                                     topRight: Radius.circular(20),
                                     bottomLeft: Radius.circular(20),
                                     bottomRight: Radius.circular(20),
                                   ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color.fromARGB(
+                                              255, 156, 169, 178)
+                                          .withOpacity(0.2), // Outer
+                                      spreadRadius:
+                                          1, // Spread radius for the outer shadow
+                                      blurRadius: 1, // Blur radius
+                                      offset: const Offset(0,
+                                          1), // Offset to make the shadow visible
+                                    ),
+                                  ],
                                 ),
                                 padding: const EdgeInsets.all(12),
                                 child: const Text(
@@ -658,14 +746,26 @@ class _ChatPageState extends State<ChatPage> {
                               child: FractionallySizedBox(
                                 widthFactor: 0.62,
                                 child: Container(
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(20),
                                       topRight: Radius.circular(20),
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20),
                                     ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color.fromARGB(
+                                                255, 156, 169, 178)
+                                            .withOpacity(0.2), // Outer
+                                        spreadRadius:
+                                            1, // Spread radius for the outer shadow
+                                        blurRadius: 1, // Blur radius
+                                        offset: const Offset(0,
+                                            1), // Offset to make the shadow visible
+                                      ),
+                                    ],
                                   ),
                                   padding: const EdgeInsets.all(12),
                                   child: const Text(
@@ -762,15 +862,29 @@ class _ChatPageState extends State<ChatPage> {
                                         child: FractionallySizedBox(
                                           widthFactor: 0.55,
                                           child: Container(
-                                            decoration: const BoxDecoration(
-                                              color: Color(0xFFD9D9D9),
-                                              borderRadius: BorderRadius.only(
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFD9D9D9),
+                                              borderRadius:
+                                                  const BorderRadius.only(
                                                 topRight: Radius.circular(20),
                                                 topLeft: Radius.circular(20),
                                                 bottomRight:
                                                     Radius.circular(20),
                                                 bottomLeft: Radius.circular(20),
                                               ),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                          255, 74, 80, 85)
+                                                      .withOpacity(
+                                                          0.2), // Outer
+                                                  spreadRadius:
+                                                      1, // Spread radius for the outer shadow
+                                                  blurRadius: 1, // Blur radius
+                                                  offset: const Offset(0,
+                                                      1), // Offset to make the shadow visible
+                                                ),
+                                              ],
                                             ),
                                             padding: const EdgeInsets.all(12),
                                             child: const Text(
@@ -809,14 +923,26 @@ class _ChatPageState extends State<ChatPage> {
                           child: Stack(
                             children: [
                               Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFE2FFD4),
-                                  borderRadius: BorderRadius.only(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFE2FFD4),
+                                  borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(20),
                                     topRight: Radius.circular(20),
                                     bottomLeft: Radius.circular(20),
                                     bottomRight: Radius.circular(20),
                                   ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color.fromARGB(
+                                              255, 156, 169, 178)
+                                          .withOpacity(0.2), // Outer
+                                      spreadRadius:
+                                          1, // Spread radius for the outer shadow
+                                      blurRadius: 1, // Blur radius
+                                      offset: const Offset(0,
+                                          1), // Offset to make the shadow visible
+                                    ),
+                                  ],
                                 ),
                                 padding: const EdgeInsets.all(12),
                                 child: const Text(
@@ -867,14 +993,26 @@ class _ChatPageState extends State<ChatPage> {
                               child: FractionallySizedBox(
                                 widthFactor: 0.88,
                                 child: Container(
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(20),
                                       topRight: Radius.circular(20),
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20),
                                     ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color.fromARGB(
+                                                255, 156, 169, 178)
+                                            .withOpacity(0.2), // Outer
+                                        spreadRadius:
+                                            1, // Spread radius for the outer shadow
+                                        blurRadius: 1, // Blur radius
+                                        offset: const Offset(0,
+                                            1), // Offset to make the shadow visible
+                                      ),
+                                    ],
                                   ),
                                   padding: const EdgeInsets.all(12),
                                   child: const Text(
@@ -971,15 +1109,29 @@ class _ChatPageState extends State<ChatPage> {
                                         child: FractionallySizedBox(
                                           widthFactor: 0.65,
                                           child: Container(
-                                            decoration: const BoxDecoration(
-                                              color: Color(0xFFD9D9D9),
-                                              borderRadius: BorderRadius.only(
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFD9D9D9),
+                                              borderRadius:
+                                                  const BorderRadius.only(
                                                 topRight: Radius.circular(20),
                                                 topLeft: Radius.circular(20),
                                                 bottomRight:
                                                     Radius.circular(20),
                                                 bottomLeft: Radius.circular(20),
                                               ),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                          255, 74, 80, 85)
+                                                      .withOpacity(
+                                                          0.2), // Outer
+                                                  spreadRadius:
+                                                      1, // Spread radius for the outer shadow
+                                                  blurRadius: 1, // Blur radius
+                                                  offset: const Offset(0,
+                                                      1), // Offset to make the shadow visible
+                                                ),
+                                              ],
                                             ),
                                             padding: const EdgeInsets.all(12),
                                             child: const Text(
