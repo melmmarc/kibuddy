@@ -29,6 +29,16 @@ class ChatBubble extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20.0),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color.fromARGB(255, 156, 169, 178)
+                      .withOpacity(0.2), // Outer shadow color
+                  spreadRadius: 1, // Spread radius for the outer shadow
+                  blurRadius: 2, // Blur radius
+                  offset:
+                      const Offset(0, 0), // Offset to make the shadow visible
+                ),
+              ],
             ),
             padding: const EdgeInsets.all(12.0),
             child: Stack(
