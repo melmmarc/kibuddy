@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
                 color: const Color(0xFF3297B7),
               ),
               IconButton(
-                icon: const Icon(Icons.add),
+                icon: const Icon(CupertinoIcons.plus),
                 onPressed: () {
                   // Add functionality to perform action on plus icon press
                 },
@@ -157,14 +157,24 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
-                            child: const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/megan-fox.webp'),
+                            child: const ClipOval(
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('assets/images/megan-fox.webp'),
+                              ),
                             ),
                           ),
                           title: const Text(
@@ -191,10 +201,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage: AssetImage(
@@ -225,10 +243,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage:
@@ -259,10 +285,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage:
@@ -293,10 +327,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage:
@@ -327,10 +369,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage: AssetImage(
@@ -361,10 +411,18 @@ class HomePage extends StatelessWidget {
                             height: 48, // Adjust the size as needed
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 148, 148, 148),
-                                width: 1.0, // Border width
-                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(
+                                          255, 156, 169, 178)
+                                      .withOpacity(0.5), // Outer shadow color
+                                  spreadRadius:
+                                      1, // Spread radius for the outer shadow
+                                  blurRadius: 2, // Blur radius
+                                  offset: const Offset(0,
+                                      0), // Offset to make the shadow visible
+                                ),
+                              ],
                             ),
                             child: const CircleAvatar(
                               backgroundImage: AssetImage(

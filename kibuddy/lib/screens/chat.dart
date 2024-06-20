@@ -78,10 +78,16 @@ class _ChatPageState extends State<ChatPage> {
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                        color: const Color.fromARGB(255, 148, 148, 148),
-                        width: 1.0,
-                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color.fromARGB(255, 156, 169, 178)
+                              .withOpacity(0.5), // Outer shadow color
+                          spreadRadius: 1, // Spread radius for the outer shadow
+                          blurRadius: 2, // Blur radius
+                          offset: const Offset(
+                              0, 0), // Offset to make the shadow visible
+                        ),
+                      ],
                     ),
                     child: CircleAvatar(
                       radius: 20,
